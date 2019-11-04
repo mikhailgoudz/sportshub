@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.JSONAPISerializer.extend({
-    primaryKey: 'TeamID',
+    primaryKey: 'GameID',
     keyForAttribute(key) {
       return key;
     },
@@ -9,16 +9,16 @@ export default DS.JSONAPISerializer.extend({
       return modelName;
     },
     normalizeResponse(store, primaryModelClass, payload) {
-        
       payload.data = payload;
       payload.data.forEach (item => {
+      console.log(item);
       item.type = primaryModelClass.modelName;
           item.attributes = {
-          TeamID : item.TeamID,
-       
-          } 
-          
-          console.log(payload)
+          GameID : item.GameID,
+          Home: item.HomeTeam,
+          Away: item.AwayTeam,
+          Season: item.Season
+          }
       });
 
       return this._super(...arguments);

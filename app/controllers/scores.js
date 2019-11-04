@@ -6,7 +6,6 @@ export default Controller.extend({
 
         moneyline(moneyLine,team){   
             
-         
             alert(`${moneyLine} ${team}`);   //we need to store this in a bet slip  
            
             

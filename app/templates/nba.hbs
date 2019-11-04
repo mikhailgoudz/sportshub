@@ -1,1 +1,8 @@
+<ul>
+  <h3>Games Today</h3>
+  {{#each this.model as |game|}}
+  {{log game}}
+      <li> <b>{{game.Home}} </b>- <b> {{game.Away}}</b></li>
+  {{/each}}
+</ul>
 {{outlet}}

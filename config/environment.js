@@ -55,7 +55,8 @@ module.exports = function(environment) {
     ENV.firebase = firebase.config.firebase;
     
     const sportsio = require('./sportsio-config');
-    ENV.SPORTS = sportsio.config.SPORTS;
+    ENV.NFL = sportsio.config.NFL;
+    ENV.NBA = sportsio.config.NBA;
     
    
   } catch (err) {

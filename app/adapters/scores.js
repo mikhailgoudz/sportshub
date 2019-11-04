@@ -11,14 +11,14 @@ export default DS.JSONAPIAdapter.extend({
   host: 'https://api.sportsdata.io/v3/nfl',
   
   pathForType() {
-    return 'scores/json/ScoresByWeek/2019REG/9';
+    return 'scores/json/ScoresByWeek/2019REG/10';
   },
   buildURL(modelName, id, snapshot, requestType, query = {}) {
     /**
      * Add the API key to every query.
      */
     
-    query.key =  ENV.SPORTS;
+    query.key =  ENV.NFL;
     return this._super(...arguments);
   }
 });
