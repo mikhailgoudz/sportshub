@@ -9,7 +9,6 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('scores');
   this.route('nba');
-  this.route('support');
 });
 
 export default Router;
