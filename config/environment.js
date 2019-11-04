@@ -51,10 +51,10 @@ module.exports = function(environment) {
 
   try {
 
-    const firebase = require('./firebase');
+    const firebase = require('./firebase-config');
     ENV.firebase = firebase.config.firebase;
     
-    const sportsio = require('./sportsio-config.js');
+    const sportsio = require('./sportsio-config');
     ENV.SPORTS = sportsio.config.SPORTS;
     
    
