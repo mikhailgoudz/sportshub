@@ -54,7 +54,7 @@ module.exports = function(environment) {
     const firebase = require('./firebase');
     ENV.firebase = firebase.config.firebase;
     
-    const sportsio = require('/sportsio');
+    const sportsio = require('./sportsio-config.js');
     ENV.SPORTS = sportsio.config.SPORTS;
     
    

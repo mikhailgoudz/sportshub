@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-
+import ENV from 'clutch-sports/config/environment'
 /**
  * Import the ENV variable for the project.
  * Note that 'data-example' should be your project name.
@@ -17,7 +17,8 @@ export default DS.JSONAPIAdapter.extend({
     /**
      * Add the API key to every query.
      */
-    query.key = 'c339709091554a78abdf9fa5242fdab9'
+    
+    query.key =  ENV.SPORTS;
     return this._super(...arguments);
   }
 });
