@@ -1,21 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-  <a class="navbar-brand">Sportshub</a>
- 
-  
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+<div class="background-image">
+  <div class="main">
       {{#if session.isAuthenticated}}
-      <span class="nav-item nav-link"> <LinkTo @route = "index">Home</LinkTo><span class="sr-only">(current)</span></span>
-      <span class="nav-item nav-link"> <LinkTo @route = "scores">NFL</LinkTo></span>
-        <span class="nav-item nav-link"> <LinkTo @route = "nba">NBA</LinkTo></span>
-      <span class="nav-item nav-link"> <span> Logged in as </span>{{ session.data.authenticated.user.displayName }}
-  <button  {{action "logout"}}>Sign out</button></span>
-
+      <span style="color:white;"> Logged in as {{ session.data.authenticated.user.displayName }} </span>
+      <button  {{action "logout"}}>Sign out</button>
       {{else}}
            <span class="nav-item nav-link">  <button class = "btn btn-primary" {{action "login"}}>Sign in with Google</button> </span>
       {{/if}}
       
-    </div>
-  </div>
-  </nav>
+
+
+  {{logo}}
   {{outlet}}
+  </div>
+</div>
+
+

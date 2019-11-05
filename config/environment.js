@@ -35,33 +35,32 @@ module.exports = function(environment) {
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
-
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
-
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
   }
-
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
 
 
   try {
-
+    //include ember firebase api keys
     const firebase = require('./firebase-config');
     ENV.firebase = firebase.config.firebase;
     
+    //include sportsio api keys
     const sportsio = require('./sportsio-config');
     ENV.NFL = sportsio.config.NFL;
     ENV.NBA = sportsio.config.NBA;
     
    
   } catch (err) {
-    console.log('config/firebase.js not found');
-    console.log('config/sportsio.js not found');
+    //output error message if problem importing config files
+    console.log('config/firebase-config.js not found');
+    console.log('config/sportsio-config.js not found');
     
   }
 
