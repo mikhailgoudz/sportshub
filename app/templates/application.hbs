@@ -1,16 +1,17 @@
 <div class="background-image">
   <div class="main">
+      {{logo}}
       {{#if session.isAuthenticated}}
       <span style="color:black;"> Logged in as {{ session.data.authenticated.user.displayName }} </span>
-      <button  {{action "logout"}}>Sign out</button>
+      <button class = "btn btn-primary" {{action "logout"}}>Sign out</button>
+      {{outlet}}
       {{else}}
            <span class="nav-item nav-link">  <button class = "btn btn-primary" {{action "login"}}>Sign in with Google</button> </span>
       {{/if}}
       
 
 
-  {{logo}}
-  {{outlet}}
+
   </div>
 </div>
 

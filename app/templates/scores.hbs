@@ -1,4 +1,4 @@
-<ul>
+{{!-- <ul>
   <h3>Live Games</h3>
   {{#each this.model as |game|}}
     {{#if game.IsInProgress}}
@@ -28,9 +28,15 @@
       </li>
     {{/unless}}
   {{/each}}
-</ul>
+</ul> --}}
 
-
+<form>
+  <div class="form-group">
+    <label for="enterWeek">Enter Week</label>
+    <input type="number" class="form-control" id="week" min="1" max="17" placeholder="Enter NFL Week Number">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 
 {{outlet}}
