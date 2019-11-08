@@ -18,7 +18,7 @@ ul {
   position: absolute;
   top: 0;
   left: 0;    
-  background-image:url('/assets/images/sports-background1.jpg');
+  /* background-image:url('/assets/images/sports-background1.jpg'); */
 }
 .darkback-low-opacity {
   background-color: rgba(240, 240, 226, 0.6);
