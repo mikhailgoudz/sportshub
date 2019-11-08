@@ -24,7 +24,12 @@ ul {
   background-color: rgba(240, 240, 226, 0.6);
 }
 
-.image-resize {
+.image-resize-nfl {
+  width: 130px;
+  height: 150px;
+}
+
+.image-resize-nba {
   width: 150px;
   height: 150px;
 }
