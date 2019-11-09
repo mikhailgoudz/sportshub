@@ -5,8 +5,9 @@ export default Route.extend({
     async model() {
         
         const url = 'https://api.sportsdata.io/v3/nfl/scores/json/CurrentWeek?key=c339709091554a78abdf9fa5242fdab9';
+        this.store.adapterFor('scores').set('host', 'https://api.sportsdata.io/v3/nfl');
         var newHost = this.store.adapterFor('scores').get('host') + '/scores/json/ScoresByWeek/2019REG/';
-       await fetch(url).then(response=> {
+        await fetch(url).then(response=> {
             return response.json();
         }).then(data=>{
             console.log(data);
