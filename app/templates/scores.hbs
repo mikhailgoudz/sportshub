@@ -29,14 +29,22 @@
     {{/unless}}
   {{/each}}
 </ul>
-{{!-- 
+
+
+
 <form>
-  <div class="form-group">
-    <label for="enterWeek">Enter Week</label>
-    <input type="number" class="form-control" id="week" min="1" max="17" placeholder="Enter NFL Week Number">
+  
+  <div class="form-group ">
+    {{input type="text" value = week placeholder = "Enter Week"}}
+    <button {{action 'week'}} class="btn btn-primary ml-2 ">Search</button>
+
+    
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> --}}
+  
+
+</form>
+
+
 
 
 {{outlet}}
