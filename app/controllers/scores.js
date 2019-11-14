@@ -5,7 +5,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
  
     actions:{
-
+        
         moneyline(moneyLine,team){   
             
             const newBet = this.store.createRecord('bet',{
@@ -31,7 +31,8 @@ export default Controller.extend({
             this.store.adapterFor('scores').set('host', newHost);
 
      
-            let nflWeekGames = await this.store.query('scores', {param:' '});       
+            return this.store.query('scores', {param:' '});  //we should probably put searches in a different route 
+           
 
         }
 
