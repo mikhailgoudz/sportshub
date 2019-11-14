@@ -1,3 +1,5 @@
+
+
 <ul>
   <h3>Live Games</h3>
   {{#each this.model as |game|}}
@@ -35,8 +37,8 @@
 <form>
   
   <div class="form-group ">
-    {{input type="text" value = week placeholder = "Enter Week"}}
-    <button {{action 'week'}} class="btn btn-primary ml-2 ">Search</button>
+    {{input type="text" value=week placeholder = "Enter Week"}}
+    <button {{action 'changeWeek' week}} class="btn btn-primary ml-2 ">Search</button>
   </div>
   
 
