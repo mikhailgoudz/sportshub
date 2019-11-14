@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('nba');
   this.route('nflweek');
   this.route('bets');
+  this.route('funds');
 });
 
 export default Router;

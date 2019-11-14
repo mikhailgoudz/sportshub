@@ -33,3 +33,23 @@ ul {
   width: 100px;
   height: 100px;
 }
+
+
+.panel-title {
+  display: inline;
+  font-weight: bold;
+}
+
+.pl-zero { 
+  padding-left: 0px;
+ }
+
+ .data-container div {
+  display: inline-block;
+  min-height: 50px;
+  height: auto;
+}
+
+.exp-date {
+  width: 170px;
+}

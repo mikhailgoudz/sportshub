@@ -9,6 +9,8 @@
       <span class="nav-item nav-link"> <LinkTo @route = "scores">NFL</LinkTo></span> 
        <span class="nav-item nav-link"> <LinkTo @route = "nba">NBA</LinkTo></span>
       <span class="nav-item nav-link"> <LinkTo @route = "bets">Bets</LinkTo></span>
+      <span class="nav-item nav-link"> <LinkTo @route = "funds">Funds</LinkTo></span>
+
       <span class="nav-item nav-link"> <span> Logged in as </span>{{ session.data.authenticated.user.displayName }}
   <button  {{action "logout"}}>Sign out</button></span>
   
