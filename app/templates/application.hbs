@@ -4,6 +4,7 @@
       {{#if session.isAuthenticated}}
       <span style="color:black;"> Logged in as {{ session.data.authenticated.user.displayName }} </span>
       <button class = "btn btn-primary" {{action "logout"}}>Sign out</button>
+      <LinkTo @route="bets">Bets</LinkTo>
       {{outlet}}
       {{else}}
            <span class="nav-item nav-link">  <button class = "btn btn-primary" {{action "login"}}>Sign in with Google</button> </span>

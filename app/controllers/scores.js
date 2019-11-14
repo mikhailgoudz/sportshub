@@ -8,8 +8,34 @@ export default Controller.extend({
 
         moneyline(moneyLine,team){   
             
-            alert(`${moneyLine} ${team}`);   //we need to store this in a bet slip  
+            const newBet = this.store.createRecord('bet',{
+
+                team: team,
+                odds: moneyLine,
+         
+            });
+
+            newBet.save();
+        },
+        async week(){
+
+
+        
+
+            let week = this.get("week");
+           
+            this.store.adapterFor('scores').set('host', 'https://api.sportsdata.io/v3/nfl');
+            var newHost = this.store.adapterFor('scores').get('host') + '/scores/json/ScoresByWeek/2019REG/';
+
+            newHost += `${week}`;
+            this.store.adapterFor('scores').set('host', newHost);
+
+     
+            let nflWeekGames = await this.store.query('scores', {param:' '});       
+
         }
+
+        
         
 
     }
