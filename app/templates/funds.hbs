@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <label for="cardNumber">AMOUNT</label>
                     <div class="input-group">
-                        {{input type="number" id="cardNumber" class="form-control text-center" value=amount  placeholder="0.00" required=required}}
+                        {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=amount  placeholder="0.00" required=required}}
                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <input type="number" min="000" max="9999" class="form-control" id="cvvCode" placeholder="CVV" required />
                     </div>
                 </div>
-            <button class="btn btn-success btn-lg btn-block" role="button"  {{action "deposit" this.amount}}>Deposit </button>
+            <button class="btn btn-success btn-lg btn-block" role="button" type="submit"  onclick={{action "deposit" this.amount}} >Deposit </button>
             </form>
         </div>
     </div>
