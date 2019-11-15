@@ -1,0 +1,22 @@
+
+<ul>
+   <h2>NFL News</h2>
+   <br>
+   <br>
+  {{#each this.model as |news|}}
+
+      <li> <h4><b>{{news.Title}} </b></h4>
+      <p>{{news.TimeAgo}}</p>
+
+      <b>{{news.Content}} </b>
+      <br>
+    
+      <a href={{news.Url}}>Source</a>
+
+      </li>
+      <br>
+  {{/each}}
+</ul>
+{{outlet}}
+
+{{outlet}}

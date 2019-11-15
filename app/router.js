@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('bets');
   this.route('funds');
   this.route('nflstandings');
+  this.route('nflnews');
 });
 
 export default Router;
