@@ -9,7 +9,7 @@ export default Controller.extend({
     actions:{
         
         moneyline(moneyLine,team){   
-            debugger;
+            
             const newBet = this.store.createRecord('bet',{
                
                 team: team,
