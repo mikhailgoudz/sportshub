@@ -17,15 +17,20 @@ export default Controller.extend({
         async login() {
             const auth = await this.get('firebaseApp').auth();
             const provider = new firebase.auth.GoogleAuthProvider();
-            return auth.signInWithPopup(provider).then(()=>{
-                
-                // this.store.findAll('users').then(()=>{
+            return auth.signInWithPopup(provider).then((data)=>{
+               
+                this.store.query('users',{filter:{uid:data.user.uid}}).then((users)=>{
                     
-                    
-                //     if(this.session.data.authenticated.user.uid){
+                    this.store.createRecord('users',{
+                        
+                        name: data.user.displayName,
+                        fund: 0,
+                        uid: data.user.uid
 
-                //     }
-                // })
+
+                    })
+                   
+                })
 
             
            
