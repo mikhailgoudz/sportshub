@@ -21,7 +21,8 @@ export default Controller.extend({
                
                 this.store.query('users',{filter:{uid:data.user.uid}}).then((users)=>{
                     
-                    console.log(users);
+                   if(users.length === 0)
+                   {
                     const newUser = this.store.createRecord('users',{
                         
                         name: data.user.displayName,
@@ -32,6 +33,7 @@ export default Controller.extend({
                     })
 
                     newUser.save();
+                   }
 
                    
                 })
