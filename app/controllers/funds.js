@@ -23,7 +23,7 @@ export default Controller.extend({
             let update = user.firstObject;
             if(amount != undefined && amount > 0 )
             {
-              update.set("fund" , amount);
+              update.set("fund" , +amount + +update.fund);
               update.save();
               console.log(update.fund);
             }
