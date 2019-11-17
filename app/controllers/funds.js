@@ -19,13 +19,13 @@ export default Controller.extend({
               uid: currentUserId
             }
           }).then(function(user) {
-
-            console.log(user) //expected this to return the model record of which ever user is signed in.. 
+            console.log(user.firstObject.fund);
+            console.log(user);
+            console.log(user.firstObject.uid); //expected this to return the model record of which ever user is signed in.. 
                               // so user.fund should be avaible for us to update the fund on the account
-           
-            console.log(user.fund) //should be 0 but its undefined 
-           
-          })
+
+     
+          });
            
         }
     }
