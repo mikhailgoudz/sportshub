@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import users from '../models/users';
 export default Controller.extend({
 
     session: service(),
@@ -19,12 +20,13 @@ export default Controller.extend({
               uid: currentUserId
             }
           }).then(function(user) {
-            console.log(user.firstObject.fund);
-            console.log(user);
-            console.log(user.firstObject.uid); //expected this to return the model record of which ever user is signed in.. 
-                              // so user.fund should be avaible for us to update the fund on the account
-
-     
+            let update = user.firstObject;
+            if(amount != undefined && amount > 0 )
+            {
+              update.set("fund" , amount);
+              update.save();
+              console.log(update.fund);
+            }
           });
            
         }
