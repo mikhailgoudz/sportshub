@@ -10,12 +10,14 @@ export default Controller.extend({
         
         moneyline(moneyLine,team){   
             
+            let today = new Date();
             const newBet = this.store.createRecord('bet',{
                
                 team: team,
                 odds: moneyLine,
                 uid: this.session.data.authenticated.user.uid,
-                sport: 'NFL'
+                sport: 'NFL',
+                datePlaced: today
                 
          
             });
