@@ -3,7 +3,7 @@ import ENV from 'clutch-sports/config/environment'
 
 //create an adapter to structure the API call in the correct form for the call
 export default DS.JSONAPIAdapter.extend({
-  host: 'https://api.sportsdata.io/v3/nba',
+  host: 'https://api.sportsdata.io/v3/nba/scores/json/GamesByDate/2019-',
   
   pathForType() {
     return ''
