@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('funds');
   this.route('nflstandings');
   this.route('nflnews');
+  this.route('nbastandings');
 });
 
 export default Router;

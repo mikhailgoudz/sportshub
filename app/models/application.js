@@ -3,6 +3,4 @@ const { Model } = DS;
 
 export default Model.extend({
 
-    Funds: DS.attr('number')
-
 });

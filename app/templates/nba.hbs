@@ -6,4 +6,9 @@
       <button {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{game.Away}} {{game.AwayTeamMoneyLine}}</button> </li>
   {{/each}}
 </ul>
+
+<ul>
+ <li><LinkTo @route = "nbastandings">Standings</LinkTo></li>
+
+ </ul>
 {{outlet}}

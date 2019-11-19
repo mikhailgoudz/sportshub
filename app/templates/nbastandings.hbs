@@ -1,0 +1,10 @@
+<ul>
+  <h3>Standings</h3>
+
+  {{#each this.model as |team|}}
+      <li> <b>{{team.City}} {{team.Name}}</b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+  {{/each}}
+</ul>
+
+
+{{outlet}}
