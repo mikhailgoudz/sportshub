@@ -5,8 +5,6 @@ import users from '../models/users';
 
 export default Controller.extend({
 
-
-    //2. How do we query for a user existing in DB when they log in, if they don’t we create a new document for them
     session: service(),
     firebaseApp: service(),
     actions: {

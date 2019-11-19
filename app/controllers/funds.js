@@ -9,10 +9,9 @@ export default Controller.extend({
     
         deposit(amount){
 
+        
         this.amount = amount;
-        console.log(amount)
-
-
+        
         let currentUserId = this.session.data.authenticated.user.uid
         
          this.store.query('users', {
@@ -25,7 +24,7 @@ export default Controller.extend({
             {
               update.set("fund" , +amount + +update.fund);
               update.save();
-              console.log(update.fund);
+           
             }
           });
            
