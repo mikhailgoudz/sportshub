@@ -1,8 +1,9 @@
 <ul>
   <h3>Games Today</h3>
   {{#each this.model as |game|}}
-  {{log game}}
-      <li> <b>{{game.Home}} </b>- <b> {{game.Away}}</b></li>
+  
+      <li> <b>{{game.Home}} </b>- <b> {{game.Away}} </b>                                                         <button {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{game.Home}} {{game.HomeTeamMoneyLine}}</button> 
+      <button {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{game.Away}} {{game.AwayTeamMoneyLine}}</button> </li>
   {{/each}}
 </ul>
 {{outlet}}

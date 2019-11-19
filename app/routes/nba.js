@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
+    controllerName: 'nba',
     async model() {
 
         var todayObject = new Date();

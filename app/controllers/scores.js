@@ -14,7 +14,8 @@ export default Controller.extend({
                
                 team: team,
                 odds: moneyLine,
-                uid: this.session.data.authenticated.user.uid
+                uid: this.session.data.authenticated.user.uid,
+                sport: 'NFL'
                 
          
             });
