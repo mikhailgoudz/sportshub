@@ -1,8 +1,7 @@
-<h2>Bets</h2>
-
 <ol>
+    <h2>Bet slips</h2>
     {{#each model as |bet|}}
-    <li>{{bet.team}} {{bet.odds}} <b>{{bet.sport}}</b></li>
+    <li><b>{{bet.sport}}</b> {{bet.team}} {{bet.odds}}  {{bet.datePlaced}}</li>
     {{/each}}
 </ol>
 {{outlet}}
