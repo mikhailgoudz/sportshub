@@ -27,7 +27,6 @@ export default DS.JSONAPISerializer.extend({
           HomeTeamMoneyLine: item.HomeTeamMoneyLine
           } 
           
-          console.log(item.attributes)
       });
 
       return this._super(...arguments);

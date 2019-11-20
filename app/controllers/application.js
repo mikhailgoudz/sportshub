@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import firebase from 'firebase/app';
-import users from '../models/users';
 
 export default Controller.extend({
 

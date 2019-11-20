@@ -1,6 +1,5 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
-import users from '../models/users';
 export default Controller.extend({
 
     session: service(),

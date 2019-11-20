@@ -9,7 +9,6 @@ export default Route.extend({
         await fetch(url).then(response=> {
             return response.json();
         }).then(data=>{
-            console.log(data);
             newHost += `${data}`;
             this.store.adapterFor('scores').set('host', newHost);
         })

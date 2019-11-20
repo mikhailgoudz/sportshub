@@ -11,7 +11,7 @@ export default DS.JSONAPISerializer.extend({
     normalizeResponse(store, primaryModelClass, payload) {
       payload.data = payload;
       payload.data.forEach (item => {
-      console.log(item);
+    
       item.type = primaryModelClass.modelName;
           item.attributes = {
           TeamID : item.TeamID,
