@@ -4,9 +4,8 @@ export default Route.extend({
     controllerName: 'nba',
     async model() {
 
-        var todayObject = new Date();
-        let todayString = todayObject.toString();
-        let todayArray = todayString.split('');
+        var todayArray = new Date().toString().split('');
+
         let today = todayArray[4] + todayArray[5].toUpperCase() + todayArray[6].toUpperCase() + '-' + todayArray[8] + todayArray[9];
         
         var newHost = this.store.adapterFor('nba').get('host');

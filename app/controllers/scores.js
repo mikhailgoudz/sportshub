@@ -10,9 +10,7 @@ export default Controller.extend({
         
         moneyline(moneyLine,team){   
             
-            let todayObject = new Date();
-            let todayString = todayObject.toString();
-            let today = todayString.slice(0,21);
+            let today = new Date().toString().slice(0,21)
             
             const newBet = this.store.createRecord('bet',{
                
