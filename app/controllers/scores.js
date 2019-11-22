@@ -19,28 +19,57 @@ export default Controller.extend({
             this.set("clicked", true);
 
         },
-        placeBet(amount) {
+        placeBet(wager) {
             let today = new Date().toString().slice(0,21)
-            
-            const newBet = this.store.createRecord('bet',{
-               
-                team: this.team,
-                odds: this.line,
-                uid: this.session.data.authenticated.user.uid,
-                sport: 'NFL',
-                datePlaced: today,
-                wager: amount
-                
-         
-            });
+            let payout =0;
+           
+            if(wager != undefined && wager > 0 )
+            {
+                if(this.line > 0)
+                {
+                    payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
+                   
 
-            newBet.save();
+                }
+                else 
+                {
+                    payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
+                   
+                }
+                console.log(payout);
+                const newBet = this.store.createRecord('bet',{
+                
+                    team: this.team,
+                    odds: this.line,
+                    uid: this.session.data.authenticated.user.uid,
+                    sport: 'NFL',
+                    datePlaced: today,
+                    wager: wager,
+                    payout: payout
             
-            console.log(this.line);
-            console.log(this.team);  
-            console.log(amount);
-            this.set("clicked", false);
-            
+                });
+
+                newBet.save();
+                
+                console.log(this.line);
+                console.log(this.team);  
+                console.log(wager);
+                this.set("clicked", false);
+
+                this.store.query('users', {
+                    filter: {
+                    uid: this.session.data.authenticated.user.uid
+                    }
+                }).then(function(user) {
+                    let update = user.firstObject;
+                    
+                    update.set("fund" ,  +update.fund - +wager);
+                    update.save();
+                    
+                    
+                });
+                this.set('wager', '');
+            }
            
         },
         cancelBet: function() {

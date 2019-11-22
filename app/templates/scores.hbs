@@ -57,14 +57,14 @@
   </div>
 </div> --}}
 {{#if this.clicked}}
-<BsModal @onSubmit={{action "placeBet" this.amount}} @onHide={{action "cancelBet"}} as |Modal|>
+<BsModal @onSubmit={{action "placeBet" this.wager}} @onHide={{action "cancelBet"}} as |Modal|>
   <Modal.header>
     <h4 class="modal-title"><i class="glyphicon glyphicon-alert "></i> Place Bet</h4>
   </Modal.header>
   <Modal.body>
         <h6>Team: {{this.team}}</h6>
         <h6>Line: {{this.line}}</h6>
-      {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=amount  placeholder="0.00" required=required}}
+      {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=wager  placeholder="0.00" required=required}}
   </Modal.body>
   <Modal.footer as |footer|>
     <BsButton @onClick={{action Modal.close}} @type="danger">Oh no, forget it!</BsButton>
