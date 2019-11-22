@@ -57,7 +57,7 @@
   </div>
 </div> --}}
 {{#if this.clicked}}
-<BsModal @onSubmit={{action "placeBet"}} as |Modal|>
+<BsModal @onSubmit={{action "placeBet"}} @onHide={{action "cancelBet"}} as |Modal|>
   <Modal.header>
     <h4 class="modal-title"><i class="glyphicon glyphicon-alert"></i> Alert</h4>
   </Modal.header>

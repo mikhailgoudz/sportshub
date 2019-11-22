@@ -37,7 +37,11 @@ export default Controller.extend({
             console.log(this.line);
             console.log(this.team);  
             console.log(amount);
+            this.set("clicked", false);
            
+        },
+        cancelBet: function() {
+            this.set("clicked", false);
         }
         
         
