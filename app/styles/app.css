@@ -54,5 +54,12 @@ ul {
   width: 170px;
 }
 
+.disappear {
+    display: none;
+}
 
+
+.appear {
+  display: inline;
+}
 

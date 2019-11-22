@@ -1,5 +1,5 @@
 
-
+<div class="appear" id="games">
 <ul>
   <h3>Live Games</h3>
   {{#each this.model as |game|}}
@@ -37,6 +37,42 @@
  <li><LinkTo @route = "nflstandings">Standings</LinkTo></li>
  <li><LinkTo @route = "nflnews">News</LinkTo></li>
  </ul>
+</div>
+{{!-- <div class="disappear" id="placebet">
+  <div class="w-25 mx-auto">
+  <form role="form" onsubmit={{action "placeBet" this.amount}}>
+  <div class="panel-heading text-center">
+              <h3 class="panel-title ">Place Bet</h3>
+    </div>
+    <div class="form-group">
+        <label for="cardNumber">AMOUNT</label>
+        <div class="input-group">
+            {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=amount  placeholder="0.00" required=required}}
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        </div>
+    </div>
+    <button class="btn btn-success btn-lg btn-block" role="button" type="submit"  >Deposit </button>
+
+  </form>
+  </div>
+</div> --}}
+{{#if this.clicked}}
+<BsModal @onSubmit={{action "placeBet"}} as |Modal|>
+  <Modal.header>
+    <h4 class="modal-title"><i class="glyphicon glyphicon-alert"></i> Alert</h4>
+  </Modal.header>
+  <Modal.body>
+    Are you absolutely sure you want to do that???
+  </Modal.body>
+  <Modal.footer as |footer|>
+    <BsButton @onClick={{action Modal.close}} @type="danger">Oh no, forget it!</BsButton>
+    <BsButton @onClick={{action Modal.submit}} @type="success">Yeah!</BsButton>
+  </Modal.footer>
+</BsModal>
+{{/if}}
+
+
+
 
 {{outlet}}
 

@@ -7,6 +7,6 @@ export default Model.extend({
     odds: DS.attr('string'),
     uid: DS.attr('string'),
     sport: DS.attr('string'),
-    datePlaced: DS.attr('string')
-
+    datePlaced: DS.attr('string'),
+    wager: DS.attr('number')
 });

@@ -5,38 +5,42 @@ import { inject as service } from '@ember/service';
 export default Controller.extend({
 
     session: service(),
-   
+    line: ' ',
+    team: ' ',
+    clicked: false,
     actions:{
         
         moneyline(moneyLine,team){   
             
-            let today = new Date().toString().slice(0,21)
+          
+            this.line = moneyLine;
+            this.team = team;
+            //this.clicked = true;
+            this.set("clicked", true);
+        },
+        placeBet(amount) {
+            //   let today = new Date().toString().slice(0,21)
             
-            const newBet = this.store.createRecord('bet',{
+            // const newBet = this.store.createRecord('bet',{
                
-                team: team,
-                odds: moneyLine,
-                uid: this.session.data.authenticated.user.uid,
-                sport: 'NFL',
-                datePlaced: today
+            //     team: team,
+            //     odds: moneyLine,
+            //     uid: this.session.data.authenticated.user.uid,
+            //     sport: 'NFL',
+            //     datePlaced: today
                 
          
-            });
+            // });
 
-            newBet.save();
-        },
-        changeWeek: function(week) {
-          
-            this.store.adapterFor('scores').set('host', 'https://api.sportsdata.io/v3/nfl');
-            var newHost = this.store.adapterFor('scores').get('host') + '/scores/json/ScoresByWeek/2019REG/';
-            newHost += `${week}`;
-            this.store.adapterFor('scores').set('host', newHost);
-            return this.store.query('scores', {param:' '}).then(function(result) {
-                
-               alert(result);
-              });  
+            // newBet.save();
             
+            console.log(this.line);
+            console.log(this.team);  
+            console.log(amount);
+           
         }
+        
+        
     
     }
 });
