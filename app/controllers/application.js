@@ -30,12 +30,9 @@ export default Controller.extend({
                     })
 
                     newUser.save();
-                   }
-
-                   
+                   }     
                 })
-
-            
+               
            
 
 

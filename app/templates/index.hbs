@@ -1,9 +1,22 @@
-<div class="jumbotron jumbotron-fluid">
+{{!-- <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4"> Home Page
     </h1>
     <p class="lead"> </p>
   </div>
-</div>
+</div> --}}
+<ol>
+    <h2>Bet slips</h2>
+    {{#each model as |bet|}}
+    {{!-- <li><b>{{bet.sport}}</b> {{bet.team}} {{bet.odds}}  {{bet.datePlaced}}</li> --}}
+      <div class="card mt-5 mb-5" style="width: 18rem;">
+      <h3 class="text-center">{{bet.sport}}</h3>
+      <div class="card-body">
+                <p>{{bet.datePlaced}}</p>
+        <h4> {{bet.team}} <span class="float-right">{{bet.odds}}</span></h4>
 
+      </div>
+    </div>
+    {{/each}}
+</ol>
 {{outlet}}
