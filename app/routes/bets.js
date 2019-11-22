@@ -6,6 +6,6 @@ export default Route.extend({
     session: service(),
     model(){
 
-        // return this.store.query('bet',{filter:{uid:this.session.data.authenticated.user.uid}});
+        return this.store.query('bet',{filter:{uid:this.session.data.authenticated.user.uid}});
     }
 });
