@@ -12,10 +12,13 @@
       <span class="nav-item nav-link"> <LinkTo @route = "funds">Deposit</LinkTo></span>
       
        <span class="nav-item nav-link"> 
-           {{#each model as |bet|}}
-        <span>${{bet.fund}}</span>
+
+          {{#each model as |user|}}
+        
+            <span>${{user.fund}}</span>
   
-    {{/each}}</span>
+          {{/each}}
+      </span>
 
       <span class="nav-item"> <span> Logged in as </span>{{ session.data.authenticated.user.displayName }}
   <button  {{action "logout"}}>Sign out</button></span>

@@ -5,7 +5,9 @@ export default Route.extend({
 
     session: service(),
     model(){
-
+        if(this.session.data.authenticated.user){
         return this.store.query('users',{filter:{uid:this.session.data.authenticated.user.uid}});
+        }
+        return {};
     }
 });

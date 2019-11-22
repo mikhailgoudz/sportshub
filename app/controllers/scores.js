@@ -51,9 +51,7 @@ export default Controller.extend({
 
                 newBet.save();
                 
-                console.log(this.line);
-                console.log(this.team);  
-                console.log(wager);
+            
                 this.set("clicked", false);
 
                 this.store.query('users', {

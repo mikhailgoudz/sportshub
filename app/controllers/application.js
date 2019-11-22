@@ -9,16 +9,15 @@ export default Controller.extend({
     actions: {
 
         logout() {
-            this.store.unloadAll();
-            return this.get('session').invalidate(); 
-           
+            
+            return this.get('session').invalidate();
         },
         async login() {
-            this.transitionToRoute('application');
+        
             const auth = await this.get('firebaseApp').auth();
             const provider = new firebase.auth.GoogleAuthProvider();
             return auth.signInWithPopup(provider).then((data)=>{
-               
+                console.log(data.user.uid, 'authpopup');
                 this.store.query('users',{filter:{uid:data.user.uid}}).then((users)=>{
                     
                    if(users.length === 0)
@@ -33,7 +32,8 @@ export default Controller.extend({
                     })
 
                     newUser.save();
-                   }     
+                   }
+                   
                 })
                
            
