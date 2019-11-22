@@ -9,15 +9,15 @@
       <span class="nav-item nav-link"> <LinkTo @route = "scores">NFL</LinkTo></span> 
        <span class="nav-item nav-link"> <LinkTo @route = "nba">NBA</LinkTo></span>
       <span class="nav-item nav-link"> <LinkTo @route = "bets">Bets</LinkTo></span>
-      <span class="nav-item nav-link"> <LinkTo @route = "funds">Funds</LinkTo></span>
+      <span class="nav-item nav-link"> <LinkTo @route = "funds">Deposit</LinkTo></span>
       
-        <span class="nav-item nav-link"> 
+       <span class="nav-item nav-link"> 
            {{#each model as |bet|}}
         <span>${{bet.fund}}</span>
   
     {{/each}}</span>
 
-      <span class="nav-item nav-link"> <span> Logged in as </span>{{ session.data.authenticated.user.displayName }}
+      <span class="nav-item"> <span> Logged in as </span>{{ session.data.authenticated.user.displayName }}
   <button  {{action "logout"}}>Sign out</button></span>
   
 
