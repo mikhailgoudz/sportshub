@@ -5,7 +5,7 @@
             <h3 class="panel-title ">Add Funds</h3>
         </div>
         <div class="panel-body">
-            <form role="form">
+            <form role="form" {{action "deposit" this.amount type="submit"}}>
                 <div class="form-group">
                     <label for="cardNumber">AMOUNT</label>
                     <div class="input-group">
@@ -38,7 +38,7 @@
                         <input type="number" min="000" max="9999" class="form-control" id="cvvCode" placeholder="CVV" required />
                     </div>
                 </div>
-            <button class="btn btn-success btn-lg btn-block" role="button" type="submit"  onclick={{action "deposit" this.amount}} >Deposit </button>
+            <button class="btn btn-success btn-lg btn-block" role="button" type="submit" >Deposit </button>
             </form>
         </div>
     </div>

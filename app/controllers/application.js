@@ -9,9 +9,12 @@ export default Controller.extend({
     actions: {
 
         logout() {
-            return this.get('session').invalidate();
+            this.store.unloadAll();
+            return this.get('session').invalidate(); 
+           
         },
         async login() {
+            this.transitionToRoute('application');
             const auth = await this.get('firebaseApp').auth();
             const provider = new firebase.auth.GoogleAuthProvider();
             return auth.signInWithPopup(provider).then((data)=>{

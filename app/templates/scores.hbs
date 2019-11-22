@@ -38,24 +38,7 @@
  <li><LinkTo @route = "nflnews">News</LinkTo></li>
  </ul>
 </div>
-{{!-- <div class="disappear" id="placebet">
-  <div class="w-25 mx-auto">
-  <form role="form" onsubmit={{action "placeBet" this.amount}}>
-  <div class="panel-heading text-center">
-              <h3 class="panel-title ">Place Bet</h3>
-    </div>
-    <div class="form-group">
-        <label for="cardNumber">AMOUNT</label>
-        <div class="input-group">
-            {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=amount  placeholder="0.00" required=required}}
-            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-        </div>
-    </div>
-    <button class="btn btn-success btn-lg btn-block" role="button" type="submit"  >Deposit </button>
 
-  </form>
-  </div>
-</div> --}}
 {{#if this.clicked}}
 <BsModal @onSubmit={{action "placeBet" this.wager}} @onHide={{action "cancelBet"}} as |Modal|>
   <Modal.header>
@@ -67,8 +50,8 @@
       {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=wager  placeholder="0.00" required=required}}
   </Modal.body>
   <Modal.footer as |footer|>
-    <BsButton @onClick={{action Modal.close}} @type="danger">Oh no, forget it!</BsButton>
-    <BsButton @onClick={{action Modal.submit}} @type="success">Yeah!</BsButton>
+    <BsButton @onClick={{action Modal.close}} @type="danger">Cancel Bet</BsButton>
+    <BsButton @onClick={{action Modal.submit}} @type="success">Place Bet</BsButton>
   </Modal.footer>
 </BsModal>
 {{/if}}

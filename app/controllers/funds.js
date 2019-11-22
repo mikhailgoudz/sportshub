@@ -7,7 +7,7 @@ export default Controller.extend({
     actions: {
     
         deposit(amount){
-
+        
         
         this.amount = amount;
         
