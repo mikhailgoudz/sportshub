@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 const { Model } = DS;
 
 export default Model.extend({
@@ -9,5 +10,15 @@ export default Model.extend({
     sport: DS.attr('string'),
     datePlaced: DS.attr('string'),
     wager: DS.attr('number'),
-    payout: DS.attr('number')
+    payout: DS.attr('number'),
+    positiveOdds: computed ('odds',function(){
+
+        if(this.get('odds')>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    })
 });
