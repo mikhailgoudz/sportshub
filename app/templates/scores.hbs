@@ -8,6 +8,7 @@
       {{else}}
       
     {{/if}}
+    
   {{/each}}
 </ul>
 
@@ -22,7 +23,7 @@
 
 
 <ul>
-  <h3>Up Coming</h3>
+  <h3>Up Coming Games</h3>
   {{#each this.model as |game|}}
    {{#unless game.IsOver}}
       <li> <b>{{game.Home}} </b> {{game.HomeScore}} - <b> {{game.Away}}</b> {{game.AwayScore}}     <button  {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{game.Home}}                      {{game.HomeTeamMoneyLine}}</button> 

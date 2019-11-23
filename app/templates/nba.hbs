@@ -1,6 +1,16 @@
 
 <ul>
-  <h3>Games Today</h3>
+  <h3>Live Games</h3>
+  {{#each this.model as |game|}}
+  {{#if game.isLive}}
+      <li> <b>{{game.Home}} </b>- <b> {{game.Away}} </b>  </li>                 
+     
+      {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+  <h3>Up Coming Games</h3>
   {{#each this.model as |game|}}
   {{#if game.Status}}
       <li> <b>{{game.Home}} </b>- <b> {{game.Away}} </b>                                                         <button {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{game.Home}} {{game.HomeTeamMoneyLine}}</button> 
@@ -19,15 +29,6 @@
   {{/each}}
 </ul>
 
-<ul>
-  <h3>Live Games</h3>
-  {{#each this.model as |game|}}
-  {{#if game.isLive}}
-      <li> <b>{{game.Home}} </b>- <b> {{game.Away}} </b>  </li>                 
-     
-      {{/if}}
-  {{/each}}
-</ul>
 
 
 

@@ -29,7 +29,7 @@ export default Model.extend({
     }),
 
     isLive: computed('Status',function(){
-        if(this.get('Status')==="inProgress"){
+        if(this.get('Status')==="InProgress"){
             return true
         }
         else{

@@ -20,8 +20,10 @@ export default Controller.extend({
 
         },
         placeBet(wager) {
+
             let today = new Date().toString().slice(0,21)
             let payout =0;
+           
            
             if(wager != undefined && wager > 0 )
             {
@@ -50,6 +52,8 @@ export default Controller.extend({
                 });
 
                 newBet.save();
+
+
                 
             
                 this.set("clicked", false);
