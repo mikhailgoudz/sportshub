@@ -19,7 +19,9 @@ export default DS.JSONAPISerializer.extend({
           Away: item.AwayTeam,
           Season: item.Season,
           AwayTeamMoneyLine: item.AwayTeamMoneyLine,
-          HomeTeamMoneyLine: item.HomeTeamMoneyLine
+          HomeTeamMoneyLine: item.HomeTeamMoneyLine,
+          AwayTeamScore: item.AwayTeamScore,
+          HomeTeamScore: item.HomeTeamScore
           }
       });
 

@@ -10,6 +10,8 @@ export default Model.extend({
     Season: DS.attr('string'),
     AwayTeamMoneyLine: DS.attr('number'),
     HomeTeamMoneyLine: DS.attr('number'),
+    AwayTeamScore: DS.attr('string'),
+    HomeTeamScore: DS.attr('string'),
     isScheduled: computed('Status',function(){
         if(this.get('Status')==="Scheduled"){
             return true
