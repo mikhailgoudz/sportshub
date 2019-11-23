@@ -1,11 +1,18 @@
+   <div class="m-4">
+   <div class="container text-center">
+        <h2>NFL News</h2>
+   </div>
+   </div>
+
+   <div class="container">
 
 <ul>
-   <h2>NFL News</h2>
-   <br>
-   <br>
-  {{#each this.model as |news|}}
 
+   {{#each this.model as |news|}}
+
+     <br>
       <li> <h4><b>{{news.Title}} </b></h4>
+     
       <p>{{news.TimeAgo}}</p>
 
       <b>{{news.Content}} </b>
@@ -17,5 +24,6 @@
       <br>
   {{/each}}
 </ul>
+</div>
 {{outlet}}
 
