@@ -3,7 +3,7 @@
   <h3>Live Games</h3>
   {{#each this.model as |game|}}
   {{#if game.isLive}}
-      <li> <b>{{game.Home}} </b>- <b> {{game.Away}} </b>  </li>                 
+   <li> <b>{{game.Home}} {{game.HomeTeamScore}} </b>- <b> {{game.Away}} {{game.AwayTeamScore}}  </b>   </li>                                                              
      
       {{/if}}
   {{/each}}
