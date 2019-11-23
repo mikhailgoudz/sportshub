@@ -37,7 +37,28 @@ export default Model.extend({
         else{
             return false;
         }
+    }),
+    positiveAwayOdds: computed ('AwayTeamMoneyLine',function(){
+
+        if(this.get('AwayTeamMoneyLine')>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    
+    }),
+    positiveHomeOdds: computed ('HomeTeamMoneyLine',function(){
+    
+      if(this.get('HomeTeamMoneyLine')>0){
+          return true;
+      }
+      else{
+          return false;
+      }
+    
     })
+    
 
     
 

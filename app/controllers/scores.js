@@ -11,8 +11,7 @@ export default Controller.extend({
     actions:{
         
         moneyline(moneyLine,team){   
-            
-          
+              
             this.set("line", moneyLine);
             this.set("team", team)
             //this.clicked = true;
