@@ -1,8 +1,22 @@
-<ul>
-  <h3>Standings</h3>
-
+ <ul>
+   <h2>Standings</h2>
+ <h3>Eastern Conference</h3>
   {{#each this.model as |team|}}
+  
+    {{#if team.IsEastern}}
       <li> <b>{{team.City}} {{team.Name}}</b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+ <h3>Western Conference</h3>
+  {{#each this.model as |team|}}
+  
+    {{#if team.IsWestern}}
+      <li> <b>{{team.City}} {{team.Name}}</b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+ 
+    {{/if}}
   {{/each}}
 </ul>
 
