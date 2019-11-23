@@ -44,13 +44,3 @@ export default Controller.extend({
     }
 });
 
-
-// favorite: this.store
-//   .query('favorite', {
-//     filter: {
-//       yelpid: params.id
-//     }
-//   })
-//   .then(favorites => {
-//     return favorites.get('firstObject');
-//   })

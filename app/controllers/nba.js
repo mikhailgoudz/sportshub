@@ -4,24 +4,76 @@ import { inject as service } from '@ember/service';
 export default Controller.extend({
 
     session: service(),
+    line: ' ',
+    team: ' ',
+    clicked: false,
 
     actions:{
 
         moneyline(moneyLine,team){   
             
+          
+            this.set("line", moneyLine);
+            this.set("team", team)
+            //this.clicked = true;
+            this.set("clicked", true);
+
+        },
+        placeBet(wager) {
             let today = new Date().toString().slice(0,21)
+            let payout =0;
            
-             const newBet = this.store.createRecord('bet',{
-               
-                team: team,
-                odds: moneyLine,
-                uid: this.session.data.authenticated.user.uid,
-                sport: "NBA",
-                datePlaced: today
+            if(wager != undefined && wager > 0 )
+            {
+                if(this.line > 0)
+                {
+                    payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
+                   
 
-            });
+                }
+                else 
+                {
+                    payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
+                   
+                }
+                console.log(payout);
+                const newBet = this.store.createRecord('bet',{
+                
+                    team: this.team,
+                    odds: this.line,
+                    uid: this.session.data.authenticated.user.uid,
+                    sport: 'NBA',
+                    datePlaced: today,
+                    wager: wager,
+                    payout: payout
+            
+                });
 
-            newBet.save();
+                newBet.save();
+                
+            
+                this.set("clicked", false);
+
+                this.store.query('users', {
+                    filter: {
+                    uid: this.session.data.authenticated.user.uid
+                    }
+                }).then(function(user) {
+                    let update = user.firstObject;
+                    
+                    update.set("fund" ,  +update.fund - +wager);
+                    update.save();
+                    
+                    
+                });
+                this.set('wager', '');
+            }
+           
+        },
+        cancelBet: function() {
+            this.set("clicked", false);
+            this.set("line", 0);
+            this.set("team", " ")
         }
 
     }
