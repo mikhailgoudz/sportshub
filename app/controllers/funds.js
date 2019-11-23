@@ -18,11 +18,23 @@ export default Controller.extend({
               uid: currentUserId
             }
           }).then(function(user) {
-            let update = user.firstObject;
+            let currentUser = user.firstObject;
             if(amount != undefined && amount > 0 )
             {
-              update.set("fund" , +amount + +update.fund);
-              update.save();
+              if(currentUser.newUserPromoOptIn && amount >200){
+              let bonus = 100;
+              currentUser.set("fund" , +amount + +currentUser.fund);
+              currentUser.set("fund", +bonus + +currentUser.fund);
+              currentUser.set("newUser",false);
+              currentUser.set("newUserPromoOptIn",false);
+              currentUser.save();
+              }
+              else{
+
+                currentUser.set("fund" , +amount + +currentUser.fund);
+                currentUser.save();
+              }
+
            
             }
           });

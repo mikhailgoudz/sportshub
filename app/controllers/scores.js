@@ -70,6 +70,21 @@ export default Controller.extend({
                     
                     
                 });
+
+                //for Promo our promo will only work for new users.
+                this.store.query('users', {
+                    filter: {
+                    uid: this.session.data.authenticated.user.uid
+                    }
+                }).then(function(user) {
+                    let someUser = user.firstObject;
+                    
+                    someUser.set("newUser" , false);
+                    someUser.save();
+                    
+                    
+                });
+
                 this.set('wager', '');
             }
            

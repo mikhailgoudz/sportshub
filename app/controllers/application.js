@@ -26,7 +26,9 @@ export default Controller.extend({
                         
                         name: data.user.displayName,
                         fund: 0,
-                        uid: data.user.uid
+                        uid: data.user.uid,
+                        newUser: true,
+                        newUserPromoOptIn: false
 
 
                     })

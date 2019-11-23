@@ -5,7 +5,9 @@ export default Model.extend({
 
     name: DS.attr('string'),
     fund: DS.attr('number'),
-    uid: DS.attr('string')
+    uid: DS.attr('string'),
+    newUser: DS.attr('boolean'),
+    newUserPromoOptIn: DS.attr('boolean')
 
 
 });
