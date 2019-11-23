@@ -1,10 +1,75 @@
+
 <ul>
-  <h3>Standings</h3>
-  {{#each this.model as |team|}}
-  {{log game}}
-      <li> <b>{{team.Team}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+  <h3>AFC EAST</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsAfcEast}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+  <h3>AFC West</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsAfcWest}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+  <h3>AFC North</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsAfcNorth}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
   {{/each}}
 </ul>
 
 
+<ul>
+  <h3>AFC South</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsAfcNorth}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+
+<ul>
+  <h3>NFC East</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsNfcEast}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+  <h3>NFC West</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsNfcWest}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+  <h3>NFC North</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsNfcNorth}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
+
+<ul>
+  <h3>NFC South</h3>
+    {{#each this.model as |team|}}
+    {{#if team.IsNfcSouth}}
+      <li> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      {{/if}}
+  {{/each}}
+</ul>
 {{outlet}}
