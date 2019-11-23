@@ -7,11 +7,15 @@ export default Controller.extend({
     session: service(),
     line: ' ',
     team: ' ',
+    symbol: ' ',
     clicked: false,
     actions:{
         
         moneyline(moneyLine,team){   
-              
+            
+            if(moneyLine> 0){
+                this.set("symbol", '+');
+            }
             this.set("line", moneyLine);
             this.set("team", team)
             //this.clicked = true;
