@@ -4,7 +4,7 @@
   <h3>Live Games</h3>
   {{#each this.model as |game|}}
     {{#if game.IsInProgress}}
-      <li><b>{{game.Home}} </b>- <b>{{game.Away}}</b> - O/U: {{game.OverUnder}}</li>
+      <li><b>{{game.Home}}</b> {{game.HomeScore}} - <b>{{game.Away}}</b> {{game.AwayScore}} </li>
       {{else}}
       
     {{/if}}

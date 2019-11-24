@@ -10,16 +10,19 @@ export default Controller.extend({
 
         logout() {
             
+            this.store.unloadAll();
+            this.transitionToRoute('index')
             return this.get('session').invalidate();
         },
         async login() {
-        
+            
+  
             const auth = await this.get('firebaseApp').auth();
             const provider = new firebase.auth.GoogleAuthProvider();
             return auth.signInWithPopup(provider).then((data)=>{
-                console.log(data.user.uid, 'authpopup');
+               
                 this.store.query('users',{filter:{uid:data.user.uid}}).then((users)=>{
-                    
+                    window.location.reload(true);
                    if(users.length === 0)
                    {
                     const newUser = this.store.createRecord('users',{
@@ -42,6 +45,7 @@ export default Controller.extend({
 
 
             })
+
         }
     }
 });
