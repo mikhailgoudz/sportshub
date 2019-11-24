@@ -41,7 +41,7 @@ export default Controller.extend({
                     payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
                    
                 }
-                console.log(payout);
+             
                 const newBet = this.store.createRecord('bet',{
                 
                     team: this.team,
@@ -89,13 +89,15 @@ export default Controller.extend({
                 });
 
                 this.set('wager', '');
+                this.set('symbol', '');
             }
            
         },
         cancelBet: function() {
             this.set("clicked", false);
             this.set("line", 0);
-            this.set("team", " ")
+            this.set("team", " ");
+            this.set('symbol', '');
         }
         
         
