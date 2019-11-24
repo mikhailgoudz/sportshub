@@ -70,13 +70,15 @@ export default Controller.extend({
                     
                 });
                 this.set('wager', '');
+                this.set('symbol','');
             }
            
         },
         cancelBet: function() {
             this.set("clicked", false);
             this.set("line", 0);
-            this.set("team", " ")
+            this.set("team", " ");
+            this.set('symbol','');
         }
 
     }
