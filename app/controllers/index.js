@@ -18,18 +18,17 @@ export default Controller.extend({
                 
                 let currentUser = user.firstObject;
                 if(currentUser.newUser){
-                console.log(currentUser);
-                currentUser.set("newUserPromoOptIn" , true);
-                currentUser.save();
+                    currentUser.set("newUserPromoOptIn" , true);
+                    currentUser.save();
+                
                 }
                 else{
 
                     alert("YOU ARE NOT A NEW USER, SORRY")
                 }
-                
             });
             
-
+            this.set("clicked",false);
         },
         cancel(){
             this.set("clicked",false);

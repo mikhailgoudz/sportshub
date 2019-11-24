@@ -21,7 +21,7 @@ export default Controller.extend({
             let currentUser = user.firstObject;
             if(amount != undefined && amount > 0 )
             {
-              if(currentUser.newUserPromoOptIn && amount >200){
+              if(currentUser.newUserPromoOptIn && amount >=200){
               let bonus = 100;
               currentUser.set("fund" , +amount + +currentUser.fund);
               currentUser.set("fund", +bonus + +currentUser.fund);
