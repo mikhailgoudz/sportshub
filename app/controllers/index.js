@@ -20,11 +20,12 @@ export default Controller.extend({
                 if(currentUser.newUser){
                     currentUser.set("newUserPromoOptIn" , true);
                     currentUser.save();
+                    alert("Congrats, You've Opted In!")
                 
                 }
                 else{
 
-                    alert("YOU ARE NOT A NEW USER, SORRY")
+                    alert("Sorry, You Are Not A New User!")
                 }
             });
             

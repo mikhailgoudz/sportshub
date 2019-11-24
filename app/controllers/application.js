@@ -16,13 +16,13 @@ export default Controller.extend({
         },
         async login() {
             
-  
             const auth = await this.get('firebaseApp').auth();
             const provider = new firebase.auth.GoogleAuthProvider();
+         
             return auth.signInWithPopup(provider).then((data)=>{
-               
+        
                 this.store.query('users',{filter:{uid:data.user.uid}}).then((users)=>{
-                    window.location.reload(true);
+                 
                    if(users.length === 0)
                    {
                     const newUser = this.store.createRecord('users',{
@@ -36,7 +36,11 @@ export default Controller.extend({
 
                     })
 
-                    newUser.save();
+                    newUser.save().then(function(){
+
+                        window.location.reload();
+                    })
+
                    }
                    
                 })
