@@ -22,7 +22,7 @@ export default Controller.extend({
 
                 case "ATL": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488553-c1c39800-0e38-11ea-9ce0-f58d1054c41f.png");  
                 break;
-
+                
                 case "BKN": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488551-bcfee400-0e38-11ea-8263-0b927046b84e.png");  
                 break;
 
@@ -118,70 +118,82 @@ export default Controller.extend({
 
             this.set("line", moneyLine);
             this.set("team", team)
-            //this.clicked = true;
             this.set("clicked", true);
 
         },
-        placeBet(wager) {
+       async placeBet(wager) {
+            
             let today = new Date().toString().slice(0,21)
             let payout =0;
-            
-            this.store.query('users', {
+
+            let user =  await this.store.query('users', {
                 filter: {
                 uid: this.session.data.authenticated.user.uid
                 }
-            }).then(function(user) {
-                let update = user.firstObject;
-                if(update.fund > wager)
-                {
-                    if(wager != undefined && wager > 0 )
-                    {
-                        if(this.line > 0)
-                        {
-                            payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
-                           
-        
-                        }
-                        else 
-                        {
-                            payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
-                           
-                        }
-                        console.log(payout);
-                        const newBet = this.store.createRecord('bet',{
-                        
-                            team: this.team,
-                            odds: this.line,
-                            uid: this.session.data.authenticated.user.uid,
-                            sport: 'NBA',
-                            datePlaced: today,
-                            wager: wager,
-                            payout: payout
-                    
-                        });
-        
-                        newBet.save();
+            }).then(user => {
 
-                        update.set("fund" ,  +update.fund - +wager);
-                        update.save();
+                 return user.firstObject;
+
+            })
+
+
+            if(user.fund >= wager ){  //user has enough funds for the wager amount
+
+                if(wager != undefined && wager > 0 ){ 
+
+                    if(this.line > 0)
+                    {
+                        payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
+                       
+    
                     }
-                    else {
-                        alert("INSUFFICIENT FUNDS TO PLACE BET, PLEASE DEPOSIT MONEY");
+                    else 
+                    {
+                        payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
+                       
                     }
+
+
+                    const newBet = this.store.createRecord('bet',{
+                        
+                        team: this.team,
+                        odds: this.line,
+                        uid: this.session.data.authenticated.user.uid,
+                        sport: 'NFL',
+                        datePlaced: today,
+                        wager: wager,
+                        payout: payout
+                
+                    });
+
+                    newBet.save();
+        
+                    user.set("fund" ,  +user.fund - +wager);
+                    user.set("newUser" , false);
+                    user.save();
+    
+
                 }
-                
-                
-            });
-           
+
+
+            }
+            else{
+
+                alert("INSUFFICIENT FUNDS TO PLACE BET, PLEASE DEPOSIT MONEY");
+            }
+
+              
+            this.set("clicked", false);
+            this.set('wager', '');
+            this.set('symbol', '');
+            this.set('picUrl', '');
+
+
             
-                this.set("clicked", false);
-                this.set('wager', '');
-                this.set('symbol','');
-                this.set('picUrl', '');
-            
-           
+    
         },
         cancelBet: function() {
+
             this.set("clicked", false);
             this.set("line", 0);
             this.set("team", " ");

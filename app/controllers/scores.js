@@ -130,67 +130,76 @@ export default Controller.extend({
             this.set("clicked", true);
 
         },
-        placeBet(wager) {
-
+        async placeBet(wager) {
+            
             let today = new Date().toString().slice(0,21)
             let payout =0;
-           
-            this.store.query('users', {
+
+            let user =  await this.store.query('users', {
                 filter: {
                 uid: this.session.data.authenticated.user.uid
                 }
-            }).then(function(user) {
-                let update = user.firstObject;
-                if(update.fund > wager)
-                {
-                    if(wager != undefined && wager > 0 )
+            }).then(user => {
+
+                 return user.firstObject;
+
+            })
+
+
+            if(user.fund >= wager ){  //user has enough funds for the wager amount
+
+                if(wager != undefined && wager > 0 ){ 
+
+                    if(this.line > 0)
                     {
-                        if(this.line > 0)
-                        {
-                            payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
-                           
-        
-                        }
-                        else 
-                        {
-                            payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
-                           
-                        }
-                     
-                        const newBet = this.store.createRecord('bet',{
-                        
-                            team: this.team,
-                            odds: this.line,
-                            uid: this.session.data.authenticated.user.uid,
-                            sport: 'NFL',
-                            datePlaced: today,
-                            wager: wager,
-                            payout: payout
-                    
-                        });
-        
-                        newBet.save();
-        
-                        update.set("fund" ,  +update.fund - +wager);
-                        update.set("newUser" , false);
-                        update.save();
+                        payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
+                       
+    
                     }
+                    else 
+                    {
+                        payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
+                       
+                    }
+
+
+                    const newBet = this.store.createRecord('bet',{
+                        
+                        team: this.team,
+                        odds: this.line,
+                        uid: this.session.data.authenticated.user.uid,
+                        sport: 'NFL',
+                        datePlaced: today,
+                        wager: wager,
+                        payout: payout
+                
+                    });
+
+                    newBet.save();
+        
+                    user.set("fund" ,  +user.fund - +wager);
+                    user.set("newUser" , false);
+                    user.save();
+    
+
                 }
-                else {
-                    alert("INSUFFICIENT FUNDS TO PLACE BET, PLEASE DEPOSIT MONEY");
-                }
-                
-                
-            });
-         
-                
+
+
+            }
+            else{
+
+                alert("INSUFFICIENT FUNDS TO PLACE BET, PLEASE DEPOSIT MONEY");
+            }
+
+              
+            this.set("clicked", false);
+            this.set('wager', '');
+            this.set('symbol', '');
+            this.set('picUrl', '');
+
+
             
-                this.set("clicked", false);
-                this.set('wager', '');
-                this.set('symbol', '');
-                this.set('picUrl', '');
-            
-           
+    
         },
         cancelBet: function() {
             this.set("clicked", false);
