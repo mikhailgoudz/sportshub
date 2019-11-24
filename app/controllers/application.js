@@ -41,11 +41,13 @@ export default Controller.extend({
                         window.location.reload();
                     })
 
+                   }else{
+                    window.location.reload();
                    }
                    
                 })
                
-           
+                
 
 
             })
