@@ -54,7 +54,6 @@ export default Controller.extend({
                 case "DEN": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488463-8ffe0180-0e37-11ea-81b6-811a7e0fcfa8.png");  
                 break;
                 
-
                 case "GB": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488459-883e5d00-0e37-11ea-8aad-209f2537aa82.png");  
                 break;
 
@@ -69,6 +68,10 @@ export default Controller.extend({
 
                 case "KC": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488450-72309c80-0e37-11ea-83ab-0fd1c6be03ba.png");  
                 break;
+
+                case "LAR": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488443-693fcb00-0e37-11ea-8a82-5392c01baf91.png");  
+                break;
+
 
                 case "MIA": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488439-61802680-0e37-11ea-950b-517541960c4b.png");  
                 break;
@@ -121,6 +124,7 @@ export default Controller.extend({
                 
                
               }
+
             this.set("line", moneyLine);
             this.set("team", team);
             this.set("clicked", true);
@@ -184,6 +188,7 @@ export default Controller.extend({
                 this.set("clicked", false);
                 this.set('wager', '');
                 this.set('symbol', '');
+                this.set('picUrl', '');
             
            
         },
@@ -192,6 +197,7 @@ export default Controller.extend({
             this.set("line", 0);
             this.set("team", " ");
             this.set('symbol', '');
+            this.set('picUrl', '');
         }
         
         
