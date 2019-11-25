@@ -1,7 +1,9 @@
-
-<div class="text-center">
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-4">
 <ul>
   <h3>Live Games</h3>
+  <br>
   {{#each this.model as |game|}}
     {{#if game.IsInProgress}}
       <li> <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.Home}}</b> {{game.HomeScore}} - <b>{{game.Away}}</b> {{game.AwayScore}} <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </li>
@@ -11,7 +13,9 @@
     
   {{/each}}
 </ul>
+</div>
 
+<div class="col-4">
 <ul>
   <h3>Completed Games</h3>
   <br>
@@ -24,9 +28,13 @@
   {{/each}}
 </ul>
 
+</div>
+
+<div class="col-4">
 
 <ul>
   <h3>Up Coming Games</h3>
+  <br>
   {{#each this.model as |game|}}
    {{#unless game.IsOver}}
    {{#unless game.IsInProgress}}
@@ -37,13 +45,28 @@
     {{/unless}}
   {{/each}}
 </ul>
+</div>
 
+
+
+ </div>
+
+ <div class="row">
+
+   <div class="col-12">
 
   <ul>
  <li><LinkTo @route = "nflstandings">Standings</LinkTo></li>
  <li><LinkTo @route = "nflnews">News</LinkTo></li>
  </ul>
-</div>
+
+
+   </div>
+
+ </div>
+ </div>
+
+
 
 {{#if this.clicked}}
 <BsModal @onSubmit={{action "placeBet" this.wager}} @onHide={{action "cancelBet"}} as |Modal|>
