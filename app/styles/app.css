@@ -72,7 +72,7 @@ ul {
 }
 
 .scoreboard {
-  box-shadow:10px 10px 15px #999;
+  box-shadow: 1px 5px 5px 5px #999;
   border-radius: 10px;
   height: 160px;
 }
@@ -100,7 +100,7 @@ ul {
 
 .home-score {
   font-family: 'Montserrat', sans-serif;
-  margin-left: 70px;
+  margin-left: 65px;
   margin-top: 30px;
   font-weight: bold;
   font-size: 30px;
@@ -113,3 +113,4 @@ ul {
   font-weight: bold;
   font-size: 30px;
 }
+
