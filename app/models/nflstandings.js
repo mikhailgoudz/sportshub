@@ -103,7 +103,7 @@ export default Model.extend({
      
         case "BAL": return "https://user-images.githubusercontent.com/43256526/69488468-9a200000-0e37-11ea-9b0e-b8ed0d7ff34a.png";  
        
-        case "BUF": return "https://user-images.githubusercontent.com/43256526/69488475-ab690c80-0e37-11ea-8b5d-0a38385c3f1d.png";  
+        case "BUF": return "https://user-images.githubusercontent.com/43256526/69584318-bc2d9580-0f91-11ea-892d-fc3a92dbefcf.png";  
        
         case "CAR": return "https://user-images.githubusercontent.com/43256526/69488474-a7d58580-0e37-11ea-97b0-27edaf748585.png";  
   
