@@ -1,56 +1,65 @@
 <div class="container mx-auto">
-<div class="container mt-4">
     <div class="row">
-      <div class="col-4">
-<ul>
-  <h3>Live Games</h3>
-  <br>
-  {{#each this.model as |game|}}
-    {{#if game.IsInProgress}}
-      <li> <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.Home}}</b> {{game.HomeScore}} - <b>{{game.Away}}</b> {{game.AwayScore}} <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </li>
-      {{else}}
-      
-    {{/if}}
-    
-  {{/each}}
-</ul>
-</div>
+      <div class="col-4 text-center">
+      <ul>
+        <h3>Live Games</h3>
+        <br>
+        {{#each this.model as |game|}}
+          {{#if game.IsInProgress}}
+          
+            <li> <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.Home}}</b> {{game.HomeScore}} - <b>{{game.Away}}</b> {{game.AwayScore}} <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </li>
+            {{else}}
+            
+          {{/if}}
+          
+        {{/each}}
+      </ul>
+      </div>
 
-<div class="col-4">
-<ul>
-  <h3>Completed Games</h3>
-  <br>
-  {{#each this.model as |game|}}
-   {{#if game.IsOver}}
-      <li> <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b> {{game.Home}} </b> {{game.HomeScore}} - <b> {{game.Away}}</b> {{game.AwayScore}} <img src={{game.AwayLogo}} alt="" height = "30" width="35"> </li>
-      <br>
-    {{/if}}
+      <div class="col-4 text-center">
+      <ul>
+        <h3>Completed Games</h3>
+        <br>
+        {{#each this.model as |game|}}
+        {{#if game.IsOver}}
+        <div class="scoreboard">
+            <li> 
+                <div class="mx-auto details">
+                  <img src={{game.HomeLogo}} class="ml-4"  alt="" height = "30" width="35">
+                  <span class="home-team ">{{game.Home}}</span> 
+                  <img src={{game.AwayLogo}}  class="ml-5" alt="" height = "30" width="35">
+                  <span class="away-team">{{game.Away}}</span>
+                </div>
+                  <span class="home-score float-left">{{game.HomeScore}}</span>
+                  <span class="away-score float-right">{{game.AwayScore}}</span> 
+              </li>
+            </div>
+            <br>
+          {{/if}}
 
-  {{/each}}
-</ul>
+        {{/each}}
+      </ul>
 
-</div>
+      </div>
 
-<div class="col-4">
+      <div class="col-4 text-center">
 
-<ul>
-  <h3>Up Coming Games</h3>
-  <br>
-  {{#each this.model as |game|}}
-   {{#unless game.IsOver}}
-   {{#unless game.IsInProgress}}
-      <li> <b>{{game.Home}} </b>- <b> {{game.Away}}</b> <button  {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{game.Home}} {{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button> 
-     <button {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{game.Away}} {{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
-      </li>
-      {{/unless}}
-    {{/unless}}
-  {{/each}}
-</ul>
-</div>
+      <ul>
+        <h3>Up Coming Games</h3>
+        <br>
+        {{#each this.model as |game|}}
+        {{#unless game.IsOver}}
+        {{#unless game.IsInProgress}}
+            <li> <b>{{game.Home}} </b>- <b> {{game.Away}}</b> <button  {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{game.Home}} {{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button> 
+          <button {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{game.Away}} {{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
+            <img src={{game.HomeLogo}} alt="" height = "30" width="35">
+            </li>
+            {{/unless}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+      </div>
 
-
-
- </div>
 
  </div>
 
