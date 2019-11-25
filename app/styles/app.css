@@ -50,30 +50,22 @@ ul {
 }
 
 
-.sidenav {
-  height: 100%; 
-  width: 150px; 
-  position: absolute; 
-  left: 0;
-  background: linear-gradient(to bottom, #152a47, #2a5ba0,#152a47);
-  overflow-x: hidden; 
+.linknavs {
+
+  background: transparent;
   
 }
 
 
-.sidenav a {
+.linknavs a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color:  rgb(255, 255, 255, 0.8);
+  color:  rgb(139, 138, 138);
   display: block;
   
 }
 
-
-.sidenav a:hover {
-  color:  rgb(255, 255, 255, 1.0);
-}
 
 .navbar {
   width: 100%;
