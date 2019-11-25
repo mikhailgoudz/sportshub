@@ -13,7 +13,7 @@
       <h3 class="text-center">{{bet.sport}}</h3>
       <div class="card-body">
                
-        <h4> Team: {{bet.team}} </h4>
+        <h4> Team: {{bet.team}} <img src={{bet.teamLogo}} alt="" height = "30" width="40"> </h4>
         <h4>Odds: {{#if bet.positiveOdds}} +{{/if}}{{bet.odds}}</h4>
         <h5>Wager: ${{bet.wager}}</h5>
         <h5>Potential Payout: ${{bet.payout}}</h5>
