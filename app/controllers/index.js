@@ -9,7 +9,6 @@ export default Controller.extend({
 
         activateNewUserPromo(){
             
-
             this.store.query('users', {
                 filter: {
                 uid: this.session.data.authenticated.user.uid
