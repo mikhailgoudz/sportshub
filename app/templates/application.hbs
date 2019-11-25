@@ -29,6 +29,39 @@
 </div>
 <div class="sidenav">
    {{#if session.isAuthenticated}}
+
+   <BsDropdown as |dd|>
+  <dd.toggle>NFL <span class="caret"></span></dd.toggle>
+  <dd.menu as |ddm|>
+    <ddm.item>
+      <ddm.linkTo @route="scores">Games</ddm.linkTo>
+    </ddm.item>
+    <ddm.item>
+      <ddm.linkTo @route="nflstandings">Standings</ddm.linkTo>
+    </ddm.item>
+
+      <ddm.item>
+      <ddm.linkTo @route="nflnews">News</ddm.linkTo>
+    </ddm.item>
+  </dd.menu>
+</BsDropdown>
+
+ <BsDropdown as |dd|>
+  <dd.toggle>NBA <span class="caret"></span></dd.toggle>
+  <dd.menu as |ddm|>
+    <ddm.item>
+      <ddm.linkTo @route="nba">Games</ddm.linkTo>
+    </ddm.item>
+    <ddm.item>
+      <ddm.linkTo @route="nbastandings">Standings</ddm.linkTo>
+    </ddm.item>
+
+      <ddm.item>
+      <ddm.linkTo @route="nbanews">News</ddm.linkTo>
+    </ddm.item>
+  </dd.menu>
+</BsDropdown>
+
       <span class="nav-item nav-link"> <LinkTo @route = "application">Home</LinkTo><span class="sr-only">(current)</span></span>
       <span class="nav-item nav-link"> <LinkTo @route = "scores">NFL</LinkTo></span> 
        <span class="nav-item nav-link"> <LinkTo @route = "nba">NBA</LinkTo></span>
