@@ -145,17 +145,19 @@ export default Controller.extend({
             if(user.fund >= wager ){  //user has enough funds for the wager amount
 
                 if(wager != undefined && wager > 0 ){ 
-
+                    wager= (+wager + +0).toFixed(2);
                     if(this.line > 0)
                     {
-                        payout = +wager + +((wager * (Math.abs(this.line) /100)).toFixed(2));
-                       
+                        payout = +wager + +((wager * (Math.abs(this.line) /100)));
+                        payout = payout.toFixed(2);
+                        console.log(payout);
     
                     }
                     else 
                     {
                         payout =+wager + +((wager / (Math.abs(this.line) /100)).toFixed(2));
-                       
+                        payout = payout.toFixed(2);
+                        console.log(payout);
                     }
 
 
@@ -173,7 +175,7 @@ export default Controller.extend({
 
                     newBet.save();
         
-                    user.set("fund" ,  +user.fund - +wager);
+                    user.set("fund" ,  (+user.fund - +wager).toFixed(2));
                     user.set("newUser" , false);
                     user.save();
     
