@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="container mx-auto mt-5">
     <div class="row">
       <div class="col-4 text-center">
       <ul>
@@ -50,10 +50,19 @@
         {{#each this.model as |game|}}
         {{#unless game.IsOver}}
         {{#unless game.IsInProgress}}
-            <li> <b>{{game.Home}} </b>- <b> {{game.Away}}</b> <button  {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{game.Home}} {{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button> 
-          <button {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{game.Away}} {{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
-            <img src={{game.HomeLogo}} alt="" height = "30" width="35">
-            </li>
+         <div class="scoreboard">
+            <li> 
+                <div class="mx-auto details">
+                  <img src={{game.HomeLogo}} class="ml-4"  alt="" height = "30" width="35">
+                  <span class="home-team ">{{game.Home}}</span> 
+                  <img src={{game.AwayLogo}}  class="ml-5" alt="" height = "30" width="35">
+                  <span class="away-team">{{game.Away}}</span>
+                </div>
+                  <button class="float-left home-line"  {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button>
+                  <button class="float-right away-line" {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
+                  <span class="away-score float-right">{{game.AwayScore}}</span> 
+              </li>
+            </div>
             {{/unless}}
           {{/unless}}
         {{/each}}
