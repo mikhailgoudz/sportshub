@@ -13,11 +13,14 @@
   <div class="col-6">
  <ul>
  <h3>Eastern Conference</h3>
+ <br>
   {{#each this.model as |team|}}
   
     {{#if team.IsEastern}}
-      <li> <b>{{team.City}} {{team.Name}}</b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.City}} {{team.Name}}</b> <b> {{team.Wins}} - {{team.Losses}}</b></li>
+      <br>
     {{/if}}
+    
   {{/each}}
 </ul>
 
@@ -26,11 +29,12 @@
 
     <ul>
  <h3>Western Conference</h3>
+ <br>
   {{#each this.model as |team|}}
   
     {{#if team.IsWestern}}
-      <li> <b>{{team.City}} {{team.Name}}</b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
- 
+      <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.City}} {{team.Name}}</b> <b> {{team.Wins}} - {{team.Losses}}</b></li>
+    <br>
     {{/if}}
   {{/each}}
 </ul>

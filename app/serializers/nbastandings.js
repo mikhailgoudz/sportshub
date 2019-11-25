@@ -14,6 +14,7 @@ export default DS.JSONAPISerializer.extend({
       item.type = primaryModelClass.modelName;
           item.attributes = {
           TeamID : item.TeamID,
+          Key: item.Key,
           City: item.City,
           Name: item.Name,
           Wins: item.Wins,
