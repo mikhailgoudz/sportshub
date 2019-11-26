@@ -21,11 +21,12 @@
   <br>
   {{#each this.model as |game|}}
   {{#if game.isFinal}}
-      <li>  <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.Home}} {{game.HomeTeamScore}} </b>- <b> {{game.Away}} {{game.AwayTeamScore}}  <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </b>   </li>   
+      <li>  <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.HomeTeam}} {{game.HomeTeamScore}} </b>- <b> {{game.AwayTeam}} {{game.AwayTeamScore}}  <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </b>   </li>   
       <br>                                                 
       {{/if}}
    
   {{/each}}
+  
 </ul>
 </div>
 
