@@ -77,12 +77,17 @@ export default Controller.extend({
                 case "MTL": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587844-ac1ab380-0f9b-11ea-8aa0-879d19a99eb5.png");  
                 break;
 
-                
+                case "MON": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587844-ac1ab380-0f9b-11ea-8aa0-879d19a99eb5.png");  
+                break;
+
                 case "NAS": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587848-ade47700-0f9b-11ea-94b4-91b527f701d0.png");  
                 break;
                 //stopped here
 
                 case "NJD": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587849-afae3a80-0f9b-11ea-9c4b-39e45edb395f.png");  
+                break;
+
+                case "NJ": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587849-afae3a80-0f9b-11ea-9c4b-39e45edb395f.png");  
                 break;
 
                 case "NYI": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587855-b2109480-0f9b-11ea-95e7-55f82c5aaf97.png");  
@@ -127,7 +132,8 @@ export default Controller.extend({
                 case "WSH": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png");  
                 break;
 
-
+                case "WAS": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png");  
+                break;
 
 
             }
