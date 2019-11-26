@@ -67,6 +67,20 @@
           </dd.menu>
         </BsDropdown>
 
+          <BsDropdown as |dd|>
+          <dd.toggle> <span style="color:white;"> NHL</span> <span class="caret"></span></dd.toggle>
+          <dd.menu as |ddm|>
+            <ddm.item>
+              <ddm.linkTo @route="nhl">Games</ddm.linkTo>
+            </ddm.item>
+
+                 <ddm.item>
+              <ddm.linkTo @route="nhlhighlights">Highlights</ddm.linkTo>
+            </ddm.item>
+
+          </dd.menu>
+        </BsDropdown>
+
       <span class="nav-item nav-link"> <LinkTo @route = "bets"> <span style="color:white;"> Bets</span></LinkTo></span>
       <span class="nav-item nav-link"> <LinkTo @route = "funds"> <span style="color:white;"> Deposit</span></LinkTo></span>
     <div class="nav-item text-center mr-4"> <button class="mx-auto" {{action "logout"}}>Sign out</button> </div>
