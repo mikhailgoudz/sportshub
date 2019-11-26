@@ -184,7 +184,7 @@ export default Controller.extend({
                         team: this.team,
                         odds: this.line,
                         uid: this.session.data.authenticated.user.uid,
-                        sport: 'NBA',
+                        sport: 'NHL',
                         datePlaced: today,
                         wager: wager,
                         payout: payout
