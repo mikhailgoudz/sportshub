@@ -1,0 +1,69 @@
+<div class="container mt-4">
+
+<div class="row">
+  <div class="col-4">
+<ul>
+  <h3>Live Games</h3>
+  <br>
+  {{#each this.model as |game|}}
+  {{#if game.isLive}}
+   <li> <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b> {{game.HomeTeam}} {{game.HomeTeamScore}} </b>- <b> {{game.AwayTeam}} {{game.AwayTeamScore}}  </b> <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </li>                                                              
+  <br>
+      {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+
+<div class="col-4">
+<ul>
+  <h3>Completed Games</h3>
+  <br>
+  {{#each this.model as |game|}}
+  {{#if game.isFinal}}
+      <li>  <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.Home}} {{game.HomeTeamScore}} </b>- <b> {{game.Away}} {{game.AwayTeamScore}}  <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </b>   </li>   
+      <br>                                                 
+      {{/if}}
+   
+  {{/each}}
+</ul>
+</div>
+
+  <div class="col-4">
+<ul>
+  <h3>Up Coming Games</h3>
+  <br>
+  {{#each this.model as |game|}}
+  {{#if game.isScheduled}}
+      <li> <b>{{game.HomeTeam}} </b>- <b> {{game.AwayTeam}} </b>  <button {{action "moneyline" game.HomeTeamMoneyLine game.HomeTeam}}>{{game.HomeTeam}} {{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button> 
+      <button {{action "moneyline" game.AwayTeamMoneyLine game.AwayTeam}}>{{game.AwayTeam}} {{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button> </li>
+      {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+
+</div>
+
+
+
+ {{#if this.clicked}}
+<BsModal @onSubmit={{action "placeBet" this.wager}} @onHide={{action "cancelBet"}} as |Modal|>
+  <Modal.header>
+    <h4 class="modal-title"><i class="glyphicon glyphicon-alert "></i> Place Bet</h4>
+  </Modal.header>
+  <Modal.body>
+        <h6>Team: <img src={{this.picUrl}} alt="" height = "400" width="470">{{this.team}}</h6>
+        <h6>Line: {{this.symbol}}{{this.line}}</h6>
+      {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=wager  placeholder="0.00" required=required}}
+  </Modal.body>
+  <Modal.footer as |footer|>
+    <BsButton @onClick={{action Modal.close}} @type="danger">Cancel Bet</BsButton>
+    <BsButton @onClick={{action Modal.submit}} @type="success">Place Bet</BsButton>
+  </Modal.footer>
+</BsModal>
+{{/if}}
+
+</div>
+
+{{outlet}}
