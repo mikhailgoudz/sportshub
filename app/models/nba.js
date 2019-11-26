@@ -90,8 +90,9 @@ export default Model.extend({
          
 
             case "GSW": return "https://user-images.githubusercontent.com/43256526/69488541-a6588d00-0e38-11ea-814c-fff16533ae57.png";  
-          
 
+            case "GS": return "https://user-images.githubusercontent.com/43256526/69488541-a6588d00-0e38-11ea-814c-fff16533ae57.png"; 
+          
             case "HOU": return "https://user-images.githubusercontent.com/43256526/69488540-a3f63300-0e38-11ea-93c7-7be69925c8bf.png";  
           
 
@@ -141,6 +142,7 @@ export default Model.extend({
 
             case "SAC": return "https://user-images.githubusercontent.com/43256526/69488488-ac417480-0e1e-11ea-9e71-3037a26d4524.png";  
          
+            case "SA": return "https://user-images.githubusercontent.com/43256526/69488485-a055b280-0e1e-11ea-8f7b-eafdd7f6cc16.png";  
 
             case "SAS": return "https://user-images.githubusercontent.com/43256526/69488485-a055b280-0e1e-11ea-8f7b-eafdd7f6cc16.png";  
        

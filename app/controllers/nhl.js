@@ -17,7 +17,7 @@ export default Controller.extend({
             if(moneyLine> 0){
                 this.set("symbol", '+');
             }
-            debugger
+            
             switch(team){
 
                 case "ANA": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69587770-6a8a0880-0f9b-11ea-8d92-89cc11e81391.png");  
