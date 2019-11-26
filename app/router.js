@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('nbastandings');
   this.route('nbanews');
   this.route('nhl');
+  this.route('nbahighlights');
 });
 
 export default Router;
