@@ -56,6 +56,9 @@ module.exports = function(environment) {
     ENV.NFL = sportsio.config.NFL;
     ENV.NBA = sportsio.config.NBA;
     ENV.NHL = sportsio.config.NHL;
+
+    const bingsearch = require('./bingsearch');
+    ENV.BING = bingsearch.config.BING
     
    
   } catch (err) {

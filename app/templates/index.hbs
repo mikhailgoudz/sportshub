@@ -1,10 +1,17 @@
 <div class="jumbotron jumbotron-fluid mx-auto text-center mt-5 w-75">
   <div class="container">
-    <h1 class="display-4"> Home Pagee
+    <h1 class="display-4"> 
+
+
+{{#each this.model as |video|}}
+
+{{{video.embedHtml}}}
+
+{{/each}}
+
 
     </h1>
   </div>
-
 
      <div class="card mt-5 mb-5" style="width: 23rem;">
       <div class="card-body">
@@ -12,6 +19,10 @@
       <button {{action "showPromo"}}>See Details</button>
       </div>
     </div>
+
+   
+
+
 
 
 {{#if this.clicked}}
