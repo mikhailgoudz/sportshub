@@ -55,6 +55,7 @@ module.exports = function(environment) {
     const sportsio = require('./sportsio-config');
     ENV.NFL = sportsio.config.NFL;
     ENV.NBA = sportsio.config.NBA;
+    ENV.NHL = sportsio.config.NHL;
     
    
   } catch (err) {
