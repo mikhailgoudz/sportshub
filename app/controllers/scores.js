@@ -69,6 +69,11 @@ export default Controller.extend({
                 case "KC": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488450-72309c80-0e37-11ea-83ab-0fd1c6be03ba.png");  
                 break;
 
+
+                case "LAC": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488447-6e047f00-0e37-11ea-9f4f-e21574d9372a.png");  
+                break;
+
+
                 case "LAR": this.set("picUrl","https://user-images.githubusercontent.com/43256526/69488443-693fcb00-0e37-11ea-8a82-5392c01baf91.png");  
                 break;
 

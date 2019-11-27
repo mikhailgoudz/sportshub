@@ -87,7 +87,9 @@ HomeLogo : computed ('Home', function(){
      
 
         case "KC": return "https://user-images.githubusercontent.com/43256526/69488450-72309c80-0e37-11ea-83ab-0fd1c6be03ba.png";  
-  
+        
+        case "LAC": return "https://user-images.githubusercontent.com/43256526/69488447-6e047f00-0e37-11ea-9f4f-e21574d9372a.png";  
+       
 
         case "LAR": return "https://user-images.githubusercontent.com/43256526/69488443-693fcb00-0e37-11ea-8a82-5392c01baf91.png";  
         
@@ -201,6 +203,8 @@ AwayLogo : computed ('Away', function(){
      
 
         case "KC": return "https://user-images.githubusercontent.com/43256526/69488450-72309c80-0e37-11ea-83ab-0fd1c6be03ba.png";  
+  
+        case "LAC": return "https://user-images.githubusercontent.com/43256526/69488447-6e047f00-0e37-11ea-9f4f-e21574d9372a.png";  
   
 
         case "LAR": return "https://user-images.githubusercontent.com/43256526/69488443-693fcb00-0e37-11ea-8a82-5392c01baf91.png";  
