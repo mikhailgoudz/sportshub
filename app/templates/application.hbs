@@ -1,7 +1,7 @@
 <div class="pagenavs">
 <nav class="navbar w-100" style="background: linear-gradient(to right, #152a47, #152a47, #2a5ba0, #2a5ba0, #152a47,#152a47);">
 
-    <h5 class="nav-item" style="color:white;"> Logged in as {{ session.data.authenticated.user.displayName }}</h5>
+    <h5 class="nav-item user-details" style="color:white;"> Logged in as {{ session.data.authenticated.user.displayName }}</h5>
     
   <div class="navbar-brand mx-auto">{{logo}}</div>
   
@@ -12,7 +12,7 @@
        
           {{#each model as |user|}}
         
-            <h5 style="color: white;">Funds: ${{user.fund}}</h5>
+            <h5 class="user-details "style="color: white;">Funds: ${{user.fund}}</h5>
   
           {{/each}}
       </span>
@@ -22,7 +22,7 @@
 
 
       {{else}}
-           <span class="nav-item nav-link">  <button class = "btn btn-primary" {{action "login"}}>Sign in with Google</button> </span>
+           <span class="nav-item nav-link">  <button class = "btn google-button" {{action "login"}}>Sign in with Google</button> </span>
       {{/if}}
 
 
@@ -88,7 +88,7 @@
 
       <span class="nav-item nav-link"> <LinkTo @route = "bets"> <span style="color:white;"> Bets</span></LinkTo></span>
       <span class="nav-item nav-link"> <LinkTo @route = "funds"> <span style="color:white;"> Deposit</span></LinkTo></span>
-    <div class="nav-item text-center mr-4"> <button class="mx-auto" {{action "logout"}}>Sign out</button> </div>
+    <div class="nav-item text-center mr-4 "> <button class="mx-auto sign-out mr-2 google-button log-out" {{action "logout"}}>Sign out</button> </div>
     {{/if}}
 </div>
 

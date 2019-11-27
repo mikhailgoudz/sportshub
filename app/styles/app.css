@@ -291,3 +291,33 @@ ul {
 .western-mr {
   margin-right: 90px;
 }
+
+.user-details{
+  font-family: 'Poppins', sans-serif;
+}
+
+.google-button{
+  background:rgb(255, 255, 255,0.4);
+  border-radius: 3px;
+  color:black;
+  font-family: 'Quicksand', sans-serif;
+  font-size:1.2em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+.google-button:hover{
+  background:transparent;
+  color: white;
+}
+
+.signout:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
