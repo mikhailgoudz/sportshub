@@ -2,12 +2,12 @@
  <div class="text-center">
 
   <img src={{"https://user-images.githubusercontent.com/43256526/69570416-c8afef00-0f8d-11ea-95bf-f0ab4a16853a.png"}} alt="" height = "60" width = "100">
-   <h2 class="border-bottom-league">2019 NFL Standings</h2>
+   <h2 class="league mt-3">2019 NFL Standings</h2>
  </div>
  </div>
 
 
-<div class="mb-5" style="border-bottom: 3px solid black;">
+<div class="mb-5 standings-border">
   <div class="container text-center">
     <div class="row">
 
@@ -17,7 +17,7 @@
 
           <h4 class="division-afc">EAST</h4>
           <br>
-          <div class="ml-5">
+          <div class="">
             {{#each this.model as |team|}}
             {{#if team.IsAfcEast}}
               <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
@@ -34,7 +34,7 @@
         <ul>
           <h4 class="division-afc">WEST</h4>
           <br>
-          <div class="ml-5">
+          <div class="">
             {{#each this.model as |team|}}
             {{#if team.IsAfcWest}}
               <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
@@ -47,7 +47,7 @@
         <ul>
           <h4 class="division-afc">NORTH</h4>
           <br>
-          <div class="ml-5">
+          <div class="">
             {{#each this.model as |team|}}
             {{#if team.IsAfcNorth}}
               <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
@@ -61,7 +61,7 @@
         <ul>
           <h4 class="division-afc">SOUTH</h4>
           <br>
-          <div class="ml-5">
+          <div class="">
             {{#each this.model as |team|}}
             {{#if team.IsAfcSouth}}
               <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
