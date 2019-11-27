@@ -189,7 +189,8 @@ export default Controller.extend({
                     user.set("fund" ,  (+user.fund - +wager).toFixed(2));
                     user.set("newUser" , false);
                     user.save();
-    
+                 
+                
 
                 }
 

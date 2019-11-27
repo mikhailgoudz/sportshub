@@ -7,7 +7,22 @@
         {{#each this.model as |game|}}
           {{#if game.IsInProgress}}
           
-            <li> <img src={{game.HomeLogo}} alt="" height = "30" width="35"> <b>{{game.Home}}</b> {{game.HomeScore}} - <b>{{game.Away}}</b> {{game.AwayScore}} <img src={{game.AwayLogo}} alt="" height = "30" width="35">  </li>
+            <div class="scoreboard">
+            <li> 
+                <div class="details">
+                <span class="ml-4">
+                  <img src={{game.HomeLogo}} class=""  alt="" height = "30" width="35">
+                  <span class="home-team ">{{game.Home}}</span> 
+                </span>
+                <span class="ml-4">
+                  <img src={{game.AwayLogo}}  class="ml-5" alt="" height = "30" width="35">
+                  <span class="away-team">{{game.Away}}</span>
+                </span>
+                </div>
+                  <span class="home-score float-left">{{game.HomeScore}}</span>
+                  <span class="away-score float-right">{{game.AwayScore}}</span> 
+              </li>
+            </div>            
             {{else}}
             
           {{/if}}
@@ -24,11 +39,15 @@
         {{#if game.IsOver}}
         <div class="scoreboard">
             <li> 
-                <div class="mx-auto details">
-                  <img src={{game.HomeLogo}} class="ml-4"  alt="" height = "30" width="35">
+                <div class="details">
+                <span class="ml-4">
+                  <img src={{game.HomeLogo}} class=""  alt="" height = "30" width="35">
                   <span class="home-team ">{{game.Home}}</span> 
+                </span>
+                <span class="ml-4">
                   <img src={{game.AwayLogo}}  class="ml-5" alt="" height = "30" width="35">
                   <span class="away-team">{{game.Away}}</span>
+                </span>
                 </div>
                   <span class="home-score float-left">{{game.HomeScore}}</span>
                   <span class="away-score float-right">{{game.AwayScore}}</span> 
@@ -50,13 +69,17 @@
         {{#each this.model as |game|}}
         {{#unless game.IsOver}}
         {{#unless game.IsInProgress}}
-         <div class="scoreboard">
+         <div class="scoreboard mb-5">
             <li> 
-                <div class="mx-auto details">
-                  <img src={{game.HomeLogo}} class="ml-4"  alt="" height = "30" width="35">
+                <div class="details">
+                <span class="ml-4">
+                  <img src={{game.HomeLogo}} class=""  alt="" height = "30" width="35">
                   <span class="home-team ">{{game.Home}}</span> 
+                </span>
+                <span class="ml-4">
                   <img src={{game.AwayLogo}}  class="ml-5" alt="" height = "30" width="35">
                   <span class="away-team">{{game.Away}}</span>
+                </span>
                 </div>
                   <button class="float-left home-line"  {{action "moneyline" game.HomeTeamMoneyLine game.Home}}>{{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button>
                   <button class="float-right away-line" {{action "moneyline" game.AwayTeamMoneyLine game.Away}}>{{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
