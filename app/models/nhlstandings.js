@@ -10,26 +10,42 @@ export default Model.extend({
     Name: DS.attr('string'),
     Wins: DS.attr('string'),
     Losses: DS.attr('string'),
-    Conference: DS.attr('string'),
-    IsEastern: computed('Conference',function(){
-
-        if(this.get('Conference') === 'Eastern'){
+    Division: DS.attr('string'),
+    IsAtlantic: computed('Division', function(){
+        if(this.get('Division') === 'Atlantic')
+        {
             return true;
         }
-        else{
+        else {
             return false;
         }
-
     }),
-    IsWestern: computed('Conference',function(){
-
-        if(this.get('Conference') === 'Western'){
+    IsMetropolitan: computed('Division', function(){
+        if(this.get('Division') === 'Metropolitan')
+        {
             return true;
         }
-        else{
+        else {
             return false;
         }
-
+    }),
+    IsCentral: computed('Division', function(){
+        if(this.get('Division') === 'Central')
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }),
+    IsPacific: computed('Division', function(){
+        if(this.get('Division') === 'Pacific')
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }),
     TeamLogo: computed('Key',function(){
 

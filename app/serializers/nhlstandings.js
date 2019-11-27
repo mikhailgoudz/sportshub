@@ -19,7 +19,7 @@ export default DS.JSONAPISerializer.extend({
           Name: item.Name,
           Wins: item.Wins,
           Losses: item.Losses,
-          Conference: item.Conference
+          Division: item.Division
 
           }
       });

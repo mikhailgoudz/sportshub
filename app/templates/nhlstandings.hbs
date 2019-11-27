@@ -1,45 +1,69 @@
  
  <div class="mt-4">
  <div class="text-center">
- <h2>NHL Standings</h2>
- <h5>Season</h5>
- <h6>2019-20</h6>
    <img src={{"https://user-images.githubusercontent.com/43256526/69602246-e197bf00-0fe4-11ea-86a1-ed04c00b9a81.png"}} alt="" height = "60" width = "60">
+   <h2 class="league mt-3">2019-20 NHL Standings</h2>
  </div>
  </div>
 
-<div class = "mt-5">
+<div class = "mb-5 standings-border">
 <div class="container text-center">
 <div class="row">
   <div class="col-6">
- <ul>
- <h3>Eastern Conference</h3>
- <br>
-  {{#each this.model as |team|}}
-  
-    {{#if team.IsEastern}}
-      <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.City}} {{team.Name}}</b> <b> {{team.Wins}} - {{team.Losses}}</b></li>
-      <br>
-    {{/if}}
-    
-  {{/each}}
-</ul>
+  <div class="eastern-nhl col-8 mt-5"><h2 class="conference">Eastern</h2></div>
+          <ul>
+          <h4 class="division-eastern-nhl" >ATLANTIC</h4>
+          <br>
+          <div class="">
+            {{#each this.model as |team|}}
+            {{#if team.IsAtlantic}}
+              <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+              <br>
+              {{/if}}
+          {{/each}}
+          </div>
+        </ul>
+          <ul>
+          <h4 class="division-eastern-nhl" >METROPOLITAN</h4>
+          <br>
+          <div class="">
+            {{#each this.model as |team|}}
+            {{#if team.IsMetropolitan}}
+              <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+              <br>
+              {{/if}}
+          {{/each}}
+          </div>
+        </ul>
 
 </div>
   <div class="col-6">
-
-    <ul>
- <h3>Western Conference</h3>
- <br>
-  {{#each this.model as |team|}}
-  
-    {{#if team.IsWestern}}
-      <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.City}} {{team.Name}}</b> <b> {{team.Wins}} - {{team.Losses}}</b></li>
-    <br>
-    {{/if}}
-  {{/each}}
-</ul>
-
+     <div class="western-nhl col-8 mt-5"><h2 class="conference">Western</h2></div>
+      
+          <ul>
+          <h4 class="division-western-nhl" >PACIFIC</h4>
+          <br>
+          <div class="western-mr">
+            {{#each this.model as |team|}}
+            {{#if team.IsPacific}}
+              <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+              <br>
+              {{/if}}
+          {{/each}}
+          </div>
+        </ul>
+          <ul>
+          <h4 class="division-western-nhl" >CENTRAL</h4>
+          <br>
+          <div class="pt-3 western-mr">
+            {{#each this.model as |team|}}
+            {{#if team.IsCentral}}
+              <li> <img src={{team.TeamLogo}} alt="" height = "25" width="30"> <b>{{team.Name}} </b>- <b> {{team.Wins}} - {{team.Losses}}</b></li>
+              <br>
+              {{/if}}
+          {{/each}}
+          </div>
+        </ul>
 
   </div>
 </div>

@@ -1,9 +1,9 @@
 <div class="container mt-4">
 
 <div class="row">
-  <div class="col-4">
+  <div class="col-4 text-center">
 <ul>
-  <h3>Live Games</h3>
+  <h3 class="headers">Live Games</h3>
   <br>
   {{#each this.model as |game|}}
   {{#if game.isLive}}
@@ -31,7 +31,7 @@
 
 <div class="col-4 text-center">
       <ul>
-        <h3>Completed Games</h3>
+        <h3 class="headers">Completed Games</h3>
         <br>
         {{#each this.model as |game|}}
         {{#if game.IsOver}}
@@ -60,7 +60,7 @@
 
 <div class="col-4 text-center">
   <ul>
-        <h3>Up Coming Games</h3>
+        <h3 class="headers">Up Coming Games</h3>
         <br>
         {{#each this.model as |game|}}
         {{#unless game.IsOver}}
@@ -77,8 +77,8 @@
                   <span class="away-team">{{game.AwayTeam}}</span>
                 </span>
                 </div>
-                  <button class="float-left home-line"  {{action "moneyline" game.HomeTeamMoneyLine game.HomeTeam}}>{{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button>
-                  <button class="float-right away-line" {{action "moneyline" game.AwayTeamMoneyLine game.AwayTeam}}>{{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
+                  <button class="float-left home-line button-line"  {{action "moneyline" game.HomeTeamMoneyLine game.HomeTeam}}>{{#if game.positiveHomeOdds}}+{{/if}}{{game.HomeTeamMoneyLine}}</button>
+                  <button class="float-right away-line button-line" {{action "moneyline" game.AwayTeamMoneyLine game.AwayTeam}}>{{#if game.positiveAwayOdds}}+{{/if}}{{game.AwayTeamMoneyLine}}</button>
                   <span class="away-score float-right">{{game.AwayScore}}</span> 
               </li>
             </div>
