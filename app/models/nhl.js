@@ -163,7 +163,9 @@ export default Model.extend({
             case "WPG": return "https://user-images.githubusercontent.com/43256526/69587986-159ac200-0f9c-11ea-90d6-0752cc3927ce.png";  
       
 
-            case "WSH": return "https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png";  
+            case "WSH": return "https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png"; 
+            
+            case "WAS": return "https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png";  
        
 
 
@@ -284,7 +286,8 @@ export default Model.extend({
       
 
             case "WSH": return "https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png";  
-       
+            
+            case "WAS": return "https://user-images.githubusercontent.com/43256526/69587982-13386800-0f9c-11ea-81f3-d438634d6d7e.png"; 
 
 
 
