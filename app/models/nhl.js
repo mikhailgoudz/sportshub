@@ -21,7 +21,7 @@ export default Model.extend({
     }),
 
     isFinal: computed('Status',function(){
-        if(this.get('Status')==="Final"){
+        if(this.get('Status')==="F/SO"){
             return true
         }
         else{

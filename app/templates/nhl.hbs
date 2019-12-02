@@ -34,7 +34,7 @@
         <h3 class="headers">Completed Games</h3>
         <br>
         {{#each this.model as |game|}}
-        {{#if game.IsOver}}
+        {{#if game.isFinal}}
         <div class="scoreboard">
             <li> 
                 <div class="details">
@@ -63,8 +63,8 @@
         <h3 class="headers">Up Coming Games</h3>
         <br>
         {{#each this.model as |game|}}
-        {{#unless game.IsOver}}
-        {{#unless game.IsInProgress}}
+        {{#if game.isScheduled}}
+      
          <div class="scoreboard mb-5">
             <li> 
                 <div class="details">
@@ -82,8 +82,8 @@
                   <span class="away-score float-right">{{game.AwayScore}}</span> 
               </li>
             </div>
-            {{/unless}}
-          {{/unless}}
+            {{/if}}
+
         {{/each}}
       </ul>
 </div>

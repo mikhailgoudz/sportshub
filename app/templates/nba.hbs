@@ -6,7 +6,7 @@
         <h3  class="headers">Live Games</h3>
         <br>
         {{#each this.model as |game|}}
-          {{#if game.IsInProgress}}
+          {{#if game.isLive}}
           
             <div class="scoreboard">
             <li> 
@@ -20,8 +20,8 @@
                   <span class="away-team">{{game.Away}}</span>
                 </span>
                 </div>
-                  <span class="home-score float-left">{{game.HomeScore}}</span>
-                  <span class="away-score float-right">{{game.AwayScore}}</span> 
+                  <span class="home-score float-left">{{game.HomeTeamScore}}</span>
+                  <span class="away-score float-right">{{game.AwayTeamScore}}</span> 
               </li>
             </div>            
             {{else}}
@@ -38,7 +38,7 @@
         <h3  class="headers">Completed Games</h3>
         <br>
         {{#each this.model as |game|}}
-        {{#if game.IsOver}}
+        {{#if game.isFinal}}
         <div class="scoreboard">
             <li> 
                 <div class="details">
@@ -51,8 +51,8 @@
                   <span class="away-team">{{game.Away}}</span>
                 </span>
                 </div>
-                  <span class="home-score float-left">{{game.HomeScore}}</span>
-                  <span class="away-score float-right">{{game.AwayScore}}</span> 
+                  <span class="home-score float-left">{{game.HomeTeamScore}}</span>
+                  <span class="away-score float-right">{{game.AwayTeamScore}}</span> 
               </li>
             </div>
             <br>
@@ -67,8 +67,8 @@
         <h3  class="headers">Up Coming Games</h3>
         <br>
         {{#each this.model as |game|}}
-        {{#unless game.IsOver}}
-        {{#unless game.IsInProgress}}
+        {{#if game.isScheduled}}
+     
          <div class="scoreboard mb-5">
             <li> 
                 <div class="details">
@@ -86,8 +86,8 @@
                   <span class="away-score float-right">{{game.AwayScore}}</span> 
               </li>
             </div>
-            {{/unless}}
-          {{/unless}}
+            {{/if}}
+          
         {{/each}}
       </ul>
 </div>
