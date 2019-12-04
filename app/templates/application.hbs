@@ -1,9 +1,8 @@
 <div class="pagenavs">
 <nav class="navbar w-100" style="background: linear-gradient(to right, #152a47, #152a47, #2a5ba0, #2a5ba0, #152a47,#152a47);">
 
-    <h5 class="nav-item user-details" style="color:white;"> Logged in as {{ session.data.authenticated.user.displayName }}</h5>
-    
-  <div class="navbar-brand mx-auto">{{logo}}</div>
+
+    <div class="navbar-brand float-left logo">{{logo}}</div>
   
 
       {{#if session.isAuthenticated}}
@@ -11,12 +10,14 @@
        <span class="nav-item nav-link"> 
        
           {{#each model as |user|}}
-        
-            <h5 class="user-details "style="color: white;">Funds: ${{user.fund}}</h5>
-  
+          <div class="user-info float-right">
+            <h5 class="nav-item user-details" style="color:white;"> Logged in as {{ session.data.authenticated.user.displayName }}</h5>  
+             <h5 class="user-details "style="color: white;">Funds: ${{user.fund}}</h5>
+          </div>  
+
           {{/each}}
       </span>
-
+  
     
   
 
@@ -24,8 +25,7 @@
       {{else}}
            <span class="nav-item nav-link">  <button class = "btn google-button" {{action "login"}}>Sign in with Google</button> </span>
       {{/if}}
-
-
+ 
   <div class="navbar linknavs">
    {{#if session.isAuthenticated}}
 

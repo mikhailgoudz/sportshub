@@ -301,7 +301,7 @@ ul {
   border-radius: 3px;
   color:black;
   font-family: 'Quicksand', sans-serif;
-  font-size:1.2em;
+  font-size:1.2em
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
@@ -320,4 +320,23 @@ ul {
   left:0;
   bottom:0;
 }
+
+
+
+.user-info {
+  background:rgb(255, 255, 255,0.4);
+  border-radius: 5px;
+  color:black;
+  font-family: 'Quicksand', sans-serif;
+  font-size:1.2em;
+  padding:0 2em;
+  outline:none;
+  padding-top: 5px;
+}
+
+.news {
+  border: 1px solid black;
+  padding: 30px;
+}
+
 

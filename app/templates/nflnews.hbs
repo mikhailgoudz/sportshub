@@ -1,16 +1,17 @@
    <div class="m-4">
-   <div class="container text-center">
-        <h2>NFL News</h2>
+   <div class="text-center">
+        <h2 class="mx-auto ">NFL News</h2>
    </div>
    </div>
 
    <div class="container">
 
-<ul>
+   <ul>
 
    {{#each this.model as |news|}}
 
      <br>
+     <div class="news mx-auto">
       <li> <h4><b>{{news.Title}} </b></h4>
      
       <p>{{news.TimeAgo}}</p>
@@ -22,6 +23,7 @@
 
       </li>
       <br>
+      </div>
   {{/each}}
 </ul>
 </div>

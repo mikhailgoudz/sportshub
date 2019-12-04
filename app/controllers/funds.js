@@ -6,7 +6,7 @@ export default Controller.extend({
     
     actions: {
     
-        deposit(amount, cardnum, expm, expy, cvv){
+      deposit(amount, cardnum, expm, expy, cvv){
         this.amount = amount;
         
         let currentUserId = this.session.data.authenticated.user.uid
@@ -31,12 +31,15 @@ export default Controller.extend({
                   currentUser.set("newUser",false);
                   currentUser.set("newUserPromoOptIn",false);
                   currentUser.save();
+
                   }
                 else{
   
                   currentUser.set("fund" , +amount + +currentUser.fund);
                   currentUser.save();
+                  
                 }
+                
               }
 
            
@@ -44,9 +47,17 @@ export default Controller.extend({
             else{
               alert("PLEASE FILL OUT ALL FIELDS");
             }
+             
           });
-           
-        }
+          //clear form
+          this.setProperties({
+            amount: '',
+            cardNumber: ' ', 
+            expityMonth: ' ',
+            expityYear: ' ',
+            cvvCode: ' ' 
+        });     
+      }
     }
 });
 
