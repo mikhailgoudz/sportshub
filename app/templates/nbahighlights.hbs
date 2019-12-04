@@ -1,13 +1,13 @@
 <div class="container mt-5">
-
 {{#each this.model as |video|}}
 
-{{{video.embedHtml}}}
-
+    <div class="pl-5 mt-5">
+    {{{video.embedHtml}}}
+    </div>
+  
 {{/each}}
 
-
-
 </div>
+
 
 {{outlet}}
