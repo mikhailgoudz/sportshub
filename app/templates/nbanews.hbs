@@ -8,7 +8,8 @@
 <ul>
    <br>
   {{#each this.model as |news|}}
-
+   <br>
+   <div class="news mx-auto">
       <li> <h4><b>{{news.Title}} </b></h4>
       <p>{{news.TimeAgo}}</p>
 
@@ -19,6 +20,7 @@
 
       </li>
       <br>
+   </div>
   {{/each}}
 </ul>
 </div>
