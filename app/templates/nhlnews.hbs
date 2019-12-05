@@ -1,0 +1,33 @@
+   <div class="m-4">
+   <div class="text-center">
+        <h2 class="mx-auto">NFL News</h2>
+   </div>
+   </div>
+
+   <div class="container">
+
+   <ul>
+
+   {{#each this.model as |news|}}
+
+     <br>
+     <div class="news">
+      <li> <h4><b>{{news.Title}} </b></h4>
+     
+      
+
+      <b>{{news.Content}} </b>
+      <br>
+    
+      <a href={{news.Url}}>Source</a>
+
+      </li>
+      <br>
+      </div>
+  {{/each}}
+</ul>
+</div>
+{{outlet}}
+
+
+{{outlet}}
