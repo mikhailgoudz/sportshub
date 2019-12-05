@@ -1,6 +1,10 @@
 @import url(//db.onlinewebfonts.com/c/17b2f1ec96bd9046eb5f6de9ce797d0b?family=NFL+RedZone);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Poppins);
+@import url(https://fonts.googleapis.com/css?family=Solway);
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url(https://fonts.googleapis.com/css?family=Ultra);
 .logo-font { 
   font-family: NFL RedZone;
 }
@@ -301,7 +305,7 @@ ul {
   border-radius: 3px;
   color:black;
   font-family: 'Quicksand', sans-serif;
-  font-size:1.2em
+  font-size:1.2em;
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
@@ -332,6 +336,7 @@ ul {
   padding:0 2em;
   outline:none;
   padding-top: 5px;
+  margin-top: -10px;
 }
 
 .news {
@@ -339,3 +344,49 @@ ul {
   padding: 30px;
 }
 
+.sway-font {
+  font-family: 'Solway', serif;
+}
+
+.questrial {
+  font-family: 'Questrial', sans-serif;
+}
+
+.righteous {
+  font-family: 'Righteous', cursive;
+}
+
+.mission-statement {
+  color: #152a47;
+  font-family: 'Ultra', serif;
+  margin-left:250px;
+  margin-top:150px;
+  
+}
+
+.intro {
+  width: 500px;
+  text-align: left;
+  font-size: 20px;
+  color: #2a5ba0;
+}
+
+.sports-background {
+  background: url('/assets/images/back2.jpg') no-repeat;
+
+  height: 400px;
+  min-width: 900px;
+  width: 100%;
+  position: absolute;
+}
+
+.promo-button {
+  background:rgb(255, 255, 255,0.6);
+  border-radius: 3px;
+  color:black;
+  font-family: 'Righteous', cursive;
+  font-size:1.2em;
+  padding:0 2em;
+  cursor:pointer;
+  margin-top: 100px;
+}

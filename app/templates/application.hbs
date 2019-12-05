@@ -2,7 +2,7 @@
 <nav class="navbar w-100" style="background: linear-gradient(to right, #152a47, #152a47, #2a5ba0, #2a5ba0, #152a47,#152a47);">
 
 
-    <div class="navbar-brand float-left logo">{{logo}}</div>
+    <div class="navbar-brand ml-5 float-left logo">{{logo}}</div>
   
 
       {{#if session.isAuthenticated}}
@@ -10,7 +10,7 @@
        <span class="nav-item nav-link"> 
        
           {{#each model as |user|}}
-          <div class="user-info float-right">
+          <div class="user-info float-right mr-4">
             <h5 class="nav-item user-details" style="color:white;"> Logged in as {{ session.data.authenticated.user.displayName }}</h5>  
              <h5 class="user-details "style="color: white;">Funds: ${{user.fund}}</h5>
           </div>  
@@ -23,7 +23,7 @@
 
 
       {{else}}
-           <span class="nav-item nav-link">  <button class = "btn google-button" {{action "login"}}>Sign in with Google</button> </span>
+           <span class="nav-item nav-link">  <button class = "sign-out mr-2 google-button log-out" {{action "login"}}>Sign in with Google</button> </span>
       {{/if}}
  
   <div class="navbar linknavs">
@@ -104,7 +104,6 @@
 </nav>
 
 </div>
-<div class="container">
+
   
 {{outlet}}
-</div>

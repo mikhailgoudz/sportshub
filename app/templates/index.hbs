@@ -1,22 +1,28 @@
-  <div class="container nfl-image">
-<div class="jumbotron jumbotron-fluid mx-auto text-center mt-5 w-75">
-
-    <h1 class="display-4"> 
-
-      Home Page
-
-    </h1>
 
 
-     <div class="card mt-5 mb-5" style="width: 23rem;">
-      <div class="card-body">
-        <h4>NEW USERS PROMO</h4>
-      <button {{action "showPromo"}}>See Details</button>
-      </div>
-    </div>
+
+<div class="mission-statement" style="display:flex;">
+<div>
+  <h3>Welcome to SportsHub!</h3>
+  <p class="intro righteous">We are an up-and-coming sports betting application that is aiming to bring you an experience that is yet to be seen. 
+    Our goal is to bring you the opportunity of doing research on your favorite teams and place various wagers on them all in one place. To get started please log in
+    to your Google account located at the top of the page. If you are a new user we have a very special offer going on, click the promo to find out more details. 
+    <b>So do your research, place your bets and most importantly please gamble responsibly. </b></p>
+</div>
+{{#if session.isAuthenticated}}
+<span class="card mb-5 ml-5 text-center" style="width:23em;">
+  <div class="card-body sports-background w-25">
+    <h4 class="w-50 mx-auto" style="color:black; background-color:rgb(255, 255, 255,0.6); border-radius: 10px;">NEW USERS PROMO</h4>
+  <button class="questrial promo-button"{{action "showPromo"}}>See Details</button>
   </div>
-   
+</span>
+{{/if}}
+</div>
 
+
+
+
+   
 
 
 
@@ -35,5 +41,5 @@
   </Modal.footer>
 </BsModal>
 {{/if}}
-</div>
+
 {{outlet}}
