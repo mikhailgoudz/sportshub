@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('nhlhighlights');
   this.route('nhlstandings');
   this.route('nhlnews');
+  this.route('nflhighlights');
 });
 
 export default Router;
