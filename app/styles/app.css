@@ -360,14 +360,12 @@ ul {
 .mission-statement {
   color: #152a47;
   font-family: 'Ultra', serif;
-  margin-left:150px;
   margin-top:50px;
-  
 }
 
 .intro {
   width: 500px;
-  text-align: left;
+  text-align: center;
   font-size: 20px;
   color: #2a5ba0;
 }
@@ -392,6 +390,3 @@ ul {
   margin-top: 100px;
 }
 
-.mission-statement-margin {
-  margin-left: 230px;
-}
