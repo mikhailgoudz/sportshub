@@ -10,7 +10,7 @@ export default DS.JSONAPISerializer.extend({
     },
     normalizeResponse(store, primaryModelClass, payload) {
       payload.data = payload;
-      console.log(payload);
+      
 
       payload.data.forEach (item => {
       item.type = primaryModelClass.modelName;

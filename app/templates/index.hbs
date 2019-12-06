@@ -27,7 +27,7 @@
 
 
 {{#if this.clicked}}
-<BsModal @onSubmit={{action "activateNewUserPromo"}} @onHide={{action "cancel"}} as |Modal|>
+<BsModal class="promomodal" @onSubmit={{action "activateNewUserPromo"}} @onHide={{action "cancel"}} as |Modal|>
   <Modal.header>
     <h4 class="modal-title"><i class="glyphicon glyphicon-alert "></i> New Users ONLY</h4>
   </Modal.header>
@@ -36,8 +36,8 @@
        <b>Make Your First Deposit Over $200 and we will gift you $100!</b> 
   </Modal.body>
   <Modal.footer as |footer|>
-    <BsButton @onClick={{action Modal.close}} @type="danger">Cancel</BsButton>
-    <BsButton @onClick={{action Modal.submit}} @type="success">OPT IN</BsButton>
+    <BsButton class="cancel" @onClick={{action Modal.close}} @type="danger">Cancel</BsButton>
+    <BsButton class="opt-in" @onClick={{action Modal.submit}} @type="success">OPT IN</BsButton>
   </Modal.footer>
 </BsModal>
 {{/if}}

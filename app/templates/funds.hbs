@@ -1,5 +1,5 @@
 
-<div class="mx-auto col-md-5 mt-5 mb-5">
+<div class="mx-auto col-md-5 mt-5 mb-5 fundspage">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
             <h3 class="panel-title ">Add Funds</h3>
@@ -9,14 +9,14 @@
                 <div class="form-group">
                     <label for="cardNumber">AMOUNT</label>
                     <div class="input-group">
-                        {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=amount  placeholder="0.00" required=required}}
+                        {{input type="number"  min="0.00"  step="1.00" class="form-control text-center theamount" value=amount  placeholder="0.00" required=required}}
                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="cardNumber">CARD NUMBER</label>
                     <div class="input-group">
-                        {{input type="text" class="form-control text-center" minlength="15" maxlength="16" value=cardNumber placeholder="Valid Card Number" required=required}}
+                        {{input type="text" class="form-control text-center cardnumber" minlength="15" maxlength="16" value=cardNumber placeholder="Valid Card Number" required=required}}
                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                     </div>
                 </div>
@@ -26,20 +26,20 @@
                     <div class="form-group w-25">
                         <label for="expDate">EXPIRATION DATE</label>
                         <div class="exp-date pl-zero">
-                            {{input type="number" min ="1" max="12" class="form-control" value=expityMonth placeholder="MM" required=required}}
+                            {{input type="number" min ="1" max="12" class="form-control month" value=expityMonth placeholder="MM" required=required}}
 
                         </div>
                         <div class="exp-date pl-zero">
-                            {{input type="number"min="2019" max="2025" class="form-control" value=expityYear placeholder="YYYY" required=required}}
+                            {{input type="number"min="2019" max="2025" class="form-control year" value=expityYear placeholder="YYYY" required=required}}
                         </div>
                     </div>
                     
                     <div class="form-group w-25 float-right">
                         <label for="cvCode"> CVV</label>
-                        {{input  type="number" min="000" max="9999" class="form-control" value=cvvCode placeholder="CVV" required=required}}
+                        {{input  type="number" min="000" max="9999" class="form-control cvv" value=cvvCode placeholder="CVV" required=required}}
                     </div>
                 </div>
-            <button class="btn btn-success btn-lg btn-block" role="button"{{action "deposit" this.amount this.cardNumber this.expityMonth this.expityYear this.cvvCode type="submit"}} >Deposit </button>
+            <button class="btn btn-success btn-lg btn-block depositsubmit" role="button"{{action "deposit" this.amount this.cardNumber this.expityMonth this.expityYear this.cvvCode type="submit"}} >Deposit </button>
             </form>
         </div>
     </div>

@@ -7,7 +7,7 @@
 
       {{#if session.isAuthenticated}}
       
-       <span class="nav-item nav-link"> 
+       <span class="nav-item nav-link user-information"> 
        
           {{#each model as |user|}}
           <div class="user-info float-right mr-4">
@@ -23,7 +23,7 @@
 
 
       {{else}}
-           <span class="nav-item nav-link">  <button class = "sign-out mr-2 google-button log-out" {{action "login"}}>Sign in with Google</button> </span>
+           <span class="nav-item nav-link">  <button class = "sign-in mr-2 google-button log-out" {{action "login"}}>Sign in with Google</button> </span>
       {{/if}}
  
   <div class="navbar linknavs">
@@ -35,7 +35,7 @@
           <dd.toggle> <span style="color:white;"> NFL</span> <span class="caret"></span></dd.toggle>
           <dd.menu as |ddm|>
             <ddm.item>
-              <ddm.linkTo @route="scores">Games</ddm.linkTo>
+              <ddm.linkTo class="games" @route="scores">Games</ddm.linkTo>
             </ddm.item>
 
                <ddm.item>

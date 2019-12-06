@@ -11,7 +11,7 @@ export default Controller.extend({
         logout() {
             
             this.store.unloadAll();
-            this.transitionToRoute('index')
+            this.transitionToRoute('index');
             return this.get('session').invalidate();
         },
         async login() {

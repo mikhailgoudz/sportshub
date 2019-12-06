@@ -12,15 +12,7 @@ module('Integration | Component | logo', function(hooks) {
 
     await render(hbs`<Logo />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <Logo>
-        template block text
-      </Logo>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+ 
+    assert.equal(this.element.textContent.trim(), 'sportshub');
   });
 });

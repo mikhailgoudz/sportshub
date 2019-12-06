@@ -160,14 +160,14 @@ export default Controller.extend({
                     {
                         payout = +wager + +((wager * (Math.abs(this.line) /100)));
                         payout = payout.toFixed(2);
-                        console.log(payout);
+                        
     
                     }
                     else 
                     {
                         payout =+wager + +((wager / (Math.abs(this.line) /100)));
                         payout = payout.toFixed(2);
-                        console.log(payout);
+                        
                        
                     }
 
