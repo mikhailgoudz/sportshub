@@ -360,8 +360,8 @@ ul {
 .mission-statement {
   color: #152a47;
   font-family: 'Ultra', serif;
-  margin-left:250px;
-  margin-top:150px;
+  margin-left:200px;
+  margin-top:50px;
   
 }
 
@@ -390,4 +390,8 @@ ul {
   padding:0 2em;
   cursor:pointer;
   margin-top: 100px;
+}
+
+.mission-statement-margin {
+  margin-left: 250px;
 }
