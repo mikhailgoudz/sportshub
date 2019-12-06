@@ -21,7 +21,8 @@ module('Acceptance | funds', function(hooks) {
     
     });
     await visit('/funds');
-    assert.dom('.fundspage').exists();
+    assert.dom('.fundspage').exists("the deposit page loads");
+
     
   })
 
@@ -59,6 +60,8 @@ module('Acceptance | funds', function(hooks) {
       assert.dom('.cvv').hasValue("202");
 
     });
+    
+  
 
   });
 

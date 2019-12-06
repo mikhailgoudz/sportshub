@@ -24,4 +24,7 @@
 /bower.json.ember-try
 /package.json.ember-try
 
-/config/firebase.js
+# exclude api keys
+/config/firebase-config.js
+/config/bingsearch.js
+/config/sportsio-config.js

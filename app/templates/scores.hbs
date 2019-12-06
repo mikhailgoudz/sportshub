@@ -69,7 +69,7 @@
         {{#each this.model as |game|}}
         {{#unless game.IsOver}}
         {{#unless game.IsInProgress}}
-         <div class="scoreboard mb-5">
+         <div class="scoreboard mb-5 upcoming-games">
             <li> 
                 <div class="details">
                 <span class="ml-4">
@@ -98,14 +98,14 @@
 
 
 {{#if this.clicked}}
-<BsModal @onSubmit={{action "placeBet" this.wager}} @onHide={{action "cancelBet"}} as |Modal|>
+<BsModal class="slip" @onSubmit={{action "placeBet" this.wager}} @onHide={{action "cancelBet"}} as |Modal|>
   <Modal.header>
     <h4 class="modal-title"><i class="glyphicon glyphicon-alert "></i> Place Bet</h4>
   </Modal.header>
   <Modal.body>
         <h6>Team: <img src={{this.picUrl}} alt="" height = "400" width="470" >{{this.team}}</h6>
         <h6>Line: {{this.symbol}}{{this.line}}</h6>
-      {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center" value=wager  placeholder="0.00" required=required autocomplete="off"}}
+      {{input type="number" id="cardNumber" min="0.00"  step="1.00" class="form-control text-center bet-amount" value=wager  placeholder="0.00" required=required autocomplete="off"}}
   </Modal.body>
   <Modal.footer as |footer|>
     <BsButton @onClick={{action Modal.close}} @type="danger">Cancel Bet</BsButton>

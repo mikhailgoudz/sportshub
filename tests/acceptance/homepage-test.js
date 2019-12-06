@@ -16,8 +16,8 @@ module('Acceptance | homepage', function(hooks) {
   //test to make new user promo and nav doesnt show up
   test('promo and nav doesnt show unless signed in', async function(assert) {
     await visit('/');
-    assert.dom('promo').doesNotExist();
-    assert.dom('pagenavs').doesNotExist();
+    assert.dom('promo').doesNotExist("promo does not appear unless logged in");
+    assert.dom('pagenavs').doesNotExist("page navs does not appear if not logged in");
     
   })
 
@@ -25,7 +25,7 @@ module('Acceptance | homepage', function(hooks) {
   test('user is able to log in', async function(assert) {
 
     await visit('/');
-    assert.dom('.sign-in').exists();
+    assert.dom('.sign-in').exists("user can see login button");
     
   
 
@@ -41,13 +41,13 @@ module('Acceptance | homepage', function(hooks) {
     });
     await visit('/');
     assert.equal(currentURL(), '/');
-    assert.dom('.user-information').exists();
+    assert.dom('.user-information').exists("user can see details about fund and their username");
     //make sure modal is clickable
     await click('.promo-button').then(function(){
-      assert.dom('.promomodal').exists();
+      assert.dom('.promomodal').exists("modal loads when logged in");
       //you are able to exist or opt in
-      assert.dom('.cancel').exists();
-      assert.dom('.opt-in').exists();
+      assert.dom('.cancel').exists("when promo is clicked user can cancel");
+      assert.dom('.opt-in').exists("when promo is clicked user can opt in");
     });
     
   });

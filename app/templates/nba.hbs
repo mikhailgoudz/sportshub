@@ -8,7 +8,7 @@
         {{#each this.model as |game|}}
           {{#if game.isLive}}
           
-            <div class="scoreboard">
+            <div class="scoreboard mb-5">
             <li> 
                 <div class="details">
                 <span class="ml-4">
@@ -39,7 +39,7 @@
         <br>
         {{#each this.model as |game|}}
         {{#if game.isFinal}}
-        <div class="scoreboard">
+        <div class="scoreboard mb-3">
             <li> 
                 <div class="details">
                 <span class="ml-4">
@@ -69,7 +69,7 @@
         {{#each this.model as |game|}}
         {{#if game.isScheduled}}
      
-         <div class="scoreboard mb-5">
+         <div class="scoreboard mb-5 upcoming-games">
             <li> 
                 <div class="details">
                 <span class="ml-4">
