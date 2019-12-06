@@ -376,7 +376,7 @@ ul {
   height: 400px;
   min-width: 900px;
   width: 100%;
-  position: absolute;
+  position: inherit;
 }
 
 .promo-button {
