@@ -13,7 +13,7 @@ export default Route.extend({
 
     
 
-    let videos = await this.store.query('bing',{q:`NBA ${today} HIGHLIGHTS`});
+    let videos = await this.store.query('bing',{q:`NBA ${today} RECAP`});
     return  videos.slice(0,2);
 
        

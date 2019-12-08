@@ -1,11 +1,13 @@
 exports.config = {
-    firebase: {
-      apiKey: "AIzaSyDKq7OEsdD7lJDxUJMEEgod-SONsjM41_c",
-      authDomain: "clutchsports-a36a8.firebaseapp.com",
-      databaseURL: "https://clutchsports-a36a8.firebaseio.com",
-      projectId: "clutchsports-a36a8",
-      storageBucket: "clutchsports-a36a8.appspot.com",
-      messagingSenderId: "505531031798",
-      appId: "1:505531031798:web:5c3583b98c2e60babb0cd7"
-  }
+    firebase:  {
+      apiKey: "AIzaSyBvGz4DhN9EhaxIKeW-ZaV26Xe59l6z4LM",
+      authDomain: "sportshub-d7e05.firebaseapp.com",
+      databaseURL: "https://sportshub-d7e05.firebaseio.com",
+      projectId: "sportshub-d7e05",
+      storageBucket: "sportshub-d7e05.appspot.com",
+      messagingSenderId: "578583306564",
+      appId: "1:578583306564:web:73aed41f36cb981517b711"
+    }
  }
+
+
