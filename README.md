@@ -1,5 +1,6 @@
 # Sportshub
-Authors: Mikhail Goudz, Dennis Krupitsky, Mark Kubrak
+Authors: Mikhail Goudz, Dennis Krupitsky
+
 
 This is a sports application project utilizing the sportsdataio, firebase, and microsoft azure apis to create a sports betting application. The user is able to sign in to their
 google account, and from there they are able to view stats, highlights, standings, etc about multiple sports. They are able to see what upcoming games are scheduled by sport and
